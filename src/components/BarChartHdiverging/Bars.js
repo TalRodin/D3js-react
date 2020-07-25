@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import { scaleLinear } from 'd3-scale'
 import { interpolateLab } from 'd3-interpolate'
-
+import {schemeSet1} from 'd3-scale-chromatic'
 
 export default class Bars extends Component {
     constructor(props) {
       super(props)
     
       this.colorScale = scaleLinear()
-        .domain([0, this.props.maxValue])
+        .domain([this.props.minValue, this.props.maxValue])
         .range(['#b3e5fc', '#01579b'])
         .interpolate(interpolateLab)
     }
@@ -25,10 +25,11 @@ export default class Bars extends Component {
           <rect
             key={datum.name}
             x={xScale(datum.name)}  
-            y={yScale(datum.value)}
-            height={scales.yScale(0) - scales.yScale(datum.value)}
+            y={yScale(Math.min(0, datum.value))}
+            height={Math.abs(yScale(datum.value) - yScale(0))}
             width={xScale.bandwidth()}
-            fill={this.colorScale(datum.value)}
+            // fill={this.colorScale(datum.value)}
+            fill={schemeSet1[datum.value > 0 ? 1 : 0]}
           />
           
        

@@ -12,6 +12,7 @@
     "d3-interpolate": "^1.4.0",
     "d3-require": "^1.2.4",
     "d3-scale": "^3.2.1",
+    "d3-scale-chromatic": "^1.5.0",
     "d3-selection": "^1.4.2",
     "lodash": "^4.17.19",
     "prop-types": "^15.7.2",
