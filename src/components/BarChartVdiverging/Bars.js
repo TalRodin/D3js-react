@@ -24,22 +24,30 @@ export default class Bars extends Component {
      
           <rect
             key={datum.name}
-            x={xScale(datum.name)}  
-            y={yScale(Math.min(0, datum.value))}
-            height={Math.abs(yScale(datum.value) - yScale(0))}
-            width={xScale.bandwidth()}
-            // fill={this.colorScale(datum.value)}
+            x={xScale(Math.min(0, datum.value))}  
+            y={yScale(datum.name)}
+            height={yScale.bandwidth()}
+            width={Math.abs(xScale(datum.value) - xScale(0))}
             fill={schemeSet1[datum.value > 0 ? 1 : 0]}
-          />
-          
-       
+          >
+            <text 
+            font-family="sans-serif" 
+            fill="black"
+            font-size="10"
+            text-anchor={datum.value < 0 ? "end" : "start"}
+            dy="0.35em"
+            x={xScale(datum.value) + Math.sign(datum.value - 0) * 4}
+            y={yScale(datum.name) + yScale.bandwidth()/2}
+            >
+              {datum.value}
+            </text>
+            
+          </rect>
         )
       )
-      
-      
       return (
         <g >
-          {bars}
+          {bars} 
           
         </g>
       )

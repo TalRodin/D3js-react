@@ -5,18 +5,19 @@ export default ({ scales, margins, svgDimensions }) => {
     const { height, width } = svgDimensions
   
     const xProps = {
-      orient: 'Bottom',
+      orient: 'Top',
       scale: scales.xScale,
-      translate: `translate(0,${height/2 - margins.bottom})`,
-      tickSize: 4
+      translate: `translate(0,${margins.top})`,
+      tickSize: 4,
+      // ticks:width/80
     }
   
     const yProps = {
       orient: 'Left',
       scale: scales.yScale,
-      translate: `translate(${margins.left},0)`,
-      tickSize: 4
-     
+      translate: `translate(${scales.xScale(0)},0)`,
+      tickSize: 0,
+      tickPadding:6
     }
     return (
 
