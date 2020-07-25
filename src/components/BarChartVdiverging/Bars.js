@@ -21,7 +21,7 @@ export default class Bars extends Component {
      
       const bars = (
         data.map(datum =>
-     
+          <g>
           <rect
             key={datum.name}
             x={xScale(Math.min(0, datum.value))}  
@@ -30,26 +30,26 @@ export default class Bars extends Component {
             width={Math.abs(xScale(datum.value) - xScale(0))}
             fill={schemeSet1[datum.value > 0 ? 1 : 0]}
           >
-            <text 
-            font-family="sans-serif" 
-            fill="black"
-            font-size="10"
-            text-anchor={datum.value < 0 ? "end" : "start"}
-            dy="0.35em"
-            x={xScale(datum.value) + Math.sign(datum.value - 0) * 4}
-            y={yScale(datum.name) + yScale.bandwidth()/2}
-            >
-              {datum.value}
-            </text>
-            
           </rect>
+          <text 
+          font-family="sans-serif" 
+          fill="black"
+          font-size="10"
+          text-anchor={datum.value < 0 ? "end" : "start"}
+          dy="0.35em"
+          x={xScale(datum.value) + Math.sign(datum.value - 0) * 4}
+          y={yScale(datum.name) + yScale.bandwidth()/2}
+          >
+            {datum.value}
+          </text>
+          </g>
         )
       )
       return (
-        <g >
+        <>
           {bars} 
           
-        </g>
+        </>
       )
     }
 }
