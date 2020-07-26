@@ -14,7 +14,7 @@ class ChartLine extends Component {
             <svg width='500' height='500' viewBox="0 -100 500 900" >
               <Pie x={x} y={y} 
                 radius={radius} 
-                innerRadius={radius * 0.67}
+                innerRadius={0}
                 outerRadius={Math.min(width, height) / 2 - 1}
                 cornerRadius={3}
                 padAngle={.005}
