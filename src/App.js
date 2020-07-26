@@ -5,6 +5,7 @@ import BarChartHdiverging from './components/BarChartHdiverging/BarChart'
 import BarChartVdiverging from './components/BarChartVdiverging/BarChart'
 import PieChart from './components/PieChart/PieChart'
 import PieChartWhole from './components/PieChartWhole/PieChart'
+import LineChart from './components/LineChart/LineChart'
 function App() {
   return (
     <div >
@@ -14,6 +15,7 @@ function App() {
        <BarChartVdiverging />
        <PieChart />
        <PieChartWhole />
+       <LineChart />
     </div>
   );
 }
