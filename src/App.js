@@ -8,7 +8,7 @@ import PieChartWhole from './components/PieChartWhole/PieChart'
 import LineChartM from './components/LineChartM/LineChart'
 import LineChartY from './components/LineChartY/LineChart'
 import LineChartD from './components/LineChartD/LineChart'
-
+import BubbleChart from './components/BubbleChart/BubbleChart'
 
 function App() {
   return (
@@ -22,6 +22,7 @@ function App() {
        <LineChartM />
        <LineChartY />
        <LineChartD />
+       <BubbleChart />
     </div>
   );
 }
