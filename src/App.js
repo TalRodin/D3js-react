@@ -9,6 +9,7 @@ import LineChartM from './components/LineChartM/LineChart'
 import LineChartY from './components/LineChartY/LineChart'
 import LineChartD from './components/LineChartD/LineChart'
 import BubbleChart from './components/BubbleChart/BubbleChart'
+import LineChartDouble from './components/LineChartDouble/LineChart'
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
        <LineChartY />
        <LineChartD />
        <BubbleChart />
+       <LineChartDouble />
     </div>
   );
 }
