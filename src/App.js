@@ -11,6 +11,7 @@ import LineChartD from './components/LineChartD/LineChart'
 import BubbleChart from './components/BubbleChart/BubbleChart'
 import LineChartDouble from './components/LineChartDouble/LineChart'
 import AreaChart from './components/AreaChart/LineChart'
+import LineBarChart from './components/LineBarChart/LineBarChart'
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
        <BubbleChart />
        <LineChartDouble />
        <AreaChart />
+       <LineBarChart />
     </div>
   );
 }
