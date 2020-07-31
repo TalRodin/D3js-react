@@ -23,10 +23,11 @@ export default class Line extends Component {
         <path
           d={line(data)}
           fill={'none'}
-          stroke={'steelblue'}
+          stroke={'mediumslateblue'}
           stroke-width={'1.5'}
           stroke-linejoin={'round'}
           stroke-linecap={'round'}
+          stroke-miterlimit={1}
         />
       
       

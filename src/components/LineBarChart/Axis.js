@@ -15,18 +15,20 @@ export default class Axis extends Component {
   
     renderAxis() {
       const axisType = `axis${this.props.orient}`
-      
-      console.log(axisType)
+
       const axisl = d3Axis[axisType]()
         .scale(this.props.scale)
         .tickSize(this.props.tickSize)
         .tickPadding([6])
+      
       d3Select(this.axisElement).call(axisl)
+      // d3Select(this.axisElement).remove()
+
 
     }
   
     render() {
-      
+      console.log(this)
       return (
         <g
           className={`Axis Axis-${this.props.orient}`}

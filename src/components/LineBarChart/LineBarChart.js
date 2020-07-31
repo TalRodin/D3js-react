@@ -5,6 +5,16 @@ import data from './data/data'
 import Bars from './Bars'
 import * as d3 from 'd3'
 import Line from './Line'
+import { select as d3Select } from 'd3-selection'
+import styled from 'styled-components'
+
+const Box = styled.div`
+width: 900px;
+height:500px;
+background:#f8f8f8;
+margin:10%;
+`
+
 
 class LineBarChart extends Component {
   constructor() {
@@ -16,7 +26,7 @@ class LineBarChart extends Component {
   render() {
     const margins = {top: 20, right: 30, bottom: 30, left: 40}
     const svgDimensions = {
-      width: 800,
+      width: 900,
       height: 500
     }
 
@@ -30,18 +40,25 @@ class LineBarChart extends Component {
     const yScale = this.yScale
       .domain([0, maxValue])
       .range([svgDimensions.height - margins.bottom ,margins.top])
+   
     const yScale2 = this.yScale2
       .domain(d3.extent(data, d => d.efficiency))
       .range([svgDimensions.height - margins.bottom ,margins.top])
     
     return (
       
-      <div>
+      <Box>
       <svg  
       
       width={svgDimensions.width} height={svgDimensions.height}
      >
-        
+      <defs>
+        <filter id="f1" x="0" y="0" width="200%" height="200%">
+          <feOffset result="offOut" in="SourceAlpha" dx="1" dy="1" />
+          <feGaussianBlur result="blurOut" in="offOut" stdDeviation="5" />
+          <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+       </filter>
+      </defs>
         <Axes
           scales={{ xScale, yScale,yScale2 }}
           margins={margins}
@@ -67,7 +84,7 @@ class LineBarChart extends Component {
             />
       </svg>
    
-      </div>
+      </Box>
     )
   }
 }

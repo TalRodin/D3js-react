@@ -15,8 +15,8 @@ export default ({ scales, margins, svgDimensions }) => {
       orient: 'Left',
       scale: scales.yScale,
       translate: `translate(${margins.left}, 0)`,
-      tickSize: 4
-     
+      tickSize: 4,
+      
     }
     const yProps2 = {
       orient: 'Right',
