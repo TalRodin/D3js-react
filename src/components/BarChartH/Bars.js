@@ -6,13 +6,20 @@ import { interpolateLab } from 'd3-interpolate'
 export default class Bars extends Component {
     constructor(props) {
       super(props)
-    
+      this.state = { isHovered: false };
+      this.onMouseOver = this.onMouseOver.bind(this);
+      this.onMouseOut = this.onMouseOut.bind(this);
       this.colorScale = scaleLinear()
         .domain([0, this.props.maxValue])
         .range(['#b3e5fc', '#01579b'])
         .interpolate(interpolateLab)
     }
-   
+    onMouseOver() {
+      this.setState({ isHovered: true });
+    }
+    onMouseOut() {
+      this.setState({ isHovered: false });
+    }
     render() {
       console.log('>>>>>>',this)
       const { scales, margins, data, svgDimensions, ...props } = this.props
@@ -29,6 +36,8 @@ export default class Bars extends Component {
             height={scales.yScale(0) - scales.yScale(datum.value)}
             width={xScale.bandwidth()}
             fill={this.colorScale(datum.value)}
+            onMouseOver={() => this.props.onMouseOverCallback(datum)}
+            onMouseOut={() => this.props.onMouseOutCallback(null)}
           />
           
        
@@ -37,7 +46,7 @@ export default class Bars extends Component {
       
       
       return (
-        <g >
+        <g onMouseOver={this.onMouseOver} onMouseOut={this.onMouseOut}  {...props}>
           {bars}
           
         </g>

@@ -20,13 +20,10 @@ export default class Bars extends Component {
       const { height } = svgDimensions
       console.log('-------',data)
       const bars = (
-        data.map(datum =>
-  
-           datum.map((d,i)=>
-           
+        data.map(datum => 
+           datum.map((d,i)=>     
           <rect
             key={d.i}
-
             x={xScale(d[0])}
             y={yScale(d.data.name)}
             height={yScale.bandwidth()}
@@ -34,17 +31,11 @@ export default class Bars extends Component {
             fill={this.colorScale(d.key)}
           />
            )
-          
-        
-       
         )
       )
-      
-      
       return (
         <g >
           {bars}
-          
         </g>
       )
     }
