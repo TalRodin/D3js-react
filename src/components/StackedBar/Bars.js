@@ -22,12 +22,13 @@ export default class Bars extends Component {
       const bars = (
         data.map(datum =>
   
-           datum.map(d=>
-
+           datum.map((d,i)=>
+           
           <rect
-            // key={d.key}
-            x={d.data.name.length}
-            y={d[1]}
+            key={d.i}
+
+            x={xScale(d.data.name)}
+            y={yScale(d[1])}
             height={yScale(d[0])-yScale(d[1])}
             width={xScale.bandwidth()}
             fill={this.colorScale(d.key)}

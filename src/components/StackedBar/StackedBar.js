@@ -24,14 +24,15 @@ class BarChart extends Component {
             
     
     const stackedSeries = stackGen(data).map(d => (d.forEach(v => v.key = d.key), d))
-    console.log('--------',stackedSeries)
+    
+    console.log('--------',stackedSeries )
 
     const xScale = this.xScale
       .padding(0.1)
       .domain(data.map(d => d.name))
       .range([margins.left, svgDimensions.width - margins.right])
     const yScale = this.yScale
-      .domain([0, d3.max(stackedSeries, d => d3.max(d, d => d[1]))])
+      .domain([0, d3.max(stackedSeries , d => d3.max(d, d => d[1]))])
       .range([svgDimensions.height - margins.bottom ,margins.top])
 
     
@@ -52,7 +53,7 @@ class BarChart extends Component {
         <Bars
           scales={{ xScale, yScale }}
           margins={margins}
-          data={stackedSeries}
+          data={stackedSeries }
           maxValue={maxValue}
           columns={columns}
           svgDimensions={svgDimensions}
