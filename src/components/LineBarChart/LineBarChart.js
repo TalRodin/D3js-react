@@ -11,7 +11,7 @@ import styled from 'styled-components'
 const Box = styled.div`
 width: 900px;
 height:500px;
-background:#f8f8f8;
+background:#fbfbfb;
 margin:10%;
 `
 
@@ -37,6 +37,7 @@ class LineBarChart extends Component {
       .padding(0.1)
       .domain(data.map(d => d.year))
       .range([margins.left, svgDimensions.width - margins.right])
+      
     const yScale = this.yScale
       .domain([0, maxValue])
       .range([svgDimensions.height - margins.bottom ,margins.top])
@@ -54,8 +55,8 @@ class LineBarChart extends Component {
      >
       <defs>
         <filter id="f1" x="0" y="0" width="200%" height="200%">
-          <feOffset result="offOut" in="SourceAlpha" dx="1" dy="1" />
-          <feGaussianBlur result="blurOut" in="offOut" stdDeviation="5" />
+          <feOffset result="offOut" in="SourceAlpha" dx="-1" dy="-1" />
+          <feGaussianBlur result="blurOut"  stdDeviation="3" />
           <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
        </filter>
       </defs>

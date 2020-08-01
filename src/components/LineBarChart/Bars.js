@@ -10,7 +10,7 @@ export default class Bars extends Component {
     
       this.colorScale = scaleLinear()
         .domain([0, this.props.maxValue])
-        .range(['#f8f8f8'])
+        .range(['#fbfbfb'])
         .interpolate(interpolateLab)
       
     }
@@ -33,12 +33,12 @@ export default class Bars extends Component {
             height={scales.yScale(0) - scales.yScale(datum.sales)}
             width={xScale.bandwidth()}
             fill={this.colorScale(datum.sales)}
-            fill-opacity={0.9}
+            fillOpacity={0.9}
             filter="url(#f1)"
           />
           <text 
           font-family="sans-serif" 
-          fill="black"
+          fill="#414141"
           font-size="10"
           text-anchor="end"
           dy="1em"

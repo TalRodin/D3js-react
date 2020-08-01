@@ -3,8 +3,7 @@ import Axis from './Axis'
 
 export default ({ scales, margins, svgDimensions }) => {
     const { height, width } = svgDimensions
-    console.log(scales)
-    
+  
     const xProps = {
       orient: 'Bottom',
       scale: scales.xScale,
@@ -16,14 +15,6 @@ export default ({ scales, margins, svgDimensions }) => {
       orient: 'Left',
       scale: scales.yScale,
       translate: `translate(${margins.left}, 0)`,
-      tickSize: 4,
-
-      
-    }
-    const yProps2 = {
-      orient: 'Right',
-      scale: scales.yScale2,
-      translate: `translate(${width - margins.right},0)`,
       tickSize: 4
      
     }
@@ -32,7 +23,6 @@ export default ({ scales, margins, svgDimensions }) => {
       <g>
         <Axis {...xProps} />
         <Axis {...yProps} />
-        <Axis {...yProps2} />
       </g>
     )
   }

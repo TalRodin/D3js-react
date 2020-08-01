@@ -27,7 +27,7 @@ export default class Line extends Component {
           stroke-width={'1.5'}
           stroke-linejoin={'round'}
           stroke-linecap={'round'}
-          stroke-miterlimit={1}
+          strokeMiterlimit={1}
         />
       
       
