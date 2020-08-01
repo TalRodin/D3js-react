@@ -3,12 +3,16 @@ import { scaleBand, scaleLinear } from 'd3-scale'
 import Axes from './Axes'
 import data from './data/data'
 import Bars from './Bars'
+import Tooltip from './Tooltip';
 
 class BarChart extends Component {
   constructor() {
     super()
     this.xScale = scaleLinear()
     this.yScale = scaleBand()
+    this.state = {
+      hoveredBar: null,
+    };
   }
   render() {
     const margins = { top: 30, right: 0, bottom: 10, left: 30 }
@@ -52,11 +56,17 @@ class BarChart extends Component {
           data={data}
           maxValue={maxValue}
           svgDimensions={svgDimensions}
-         
+          onMouseOverCallback={(datum) => this.setState({ hoveredBar: datum })}
+          onMouseOutCallback={() => this.setState({ hoveredBar: null })}
           
         />
       </svg>
-   
+      {this.state.hoveredBar ? (
+          <Tooltip
+            data={this.state.hoveredBar}
+            scales={{ xScale, yScale }}
+          />
+        ) : null}
       </div>
     )
   }
