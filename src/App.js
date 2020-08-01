@@ -13,6 +13,8 @@ import LineChartDouble from './components/LineChartDouble/LineChart'
 import AreaChart from './components/AreaChart/LineChart'
 import LineBarChart from './components/LineBarChart/LineBarChart'
 import StackedBar from './components/StackedBar/StackedBar'
+import StackedBarV from './components/StackedBarV/StackedBarV'
+
 
 function App() {
   return (
@@ -31,6 +33,7 @@ function App() {
        <AreaChart />
        <LineBarChart />
        <StackedBar />
+       <StackedBarV />
     </div>
   );
 }
