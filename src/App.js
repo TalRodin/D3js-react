@@ -14,7 +14,7 @@ import AreaChart from './components/AreaChart/LineChart'
 import LineBarChart from './components/LineBarChart/LineBarChart'
 import StackedBar from './components/StackedBar/StackedBar'
 import StackedBarV from './components/StackedBarV/StackedBarV'
-
+import CircleBar from './components/CircleBar/CircleBar'
 
 function App() {
   return (
@@ -34,6 +34,7 @@ function App() {
        <LineBarChart />
        <StackedBar />
        <StackedBarV />
+       <CircleBar />
     </div>
   );
 }

@@ -12,14 +12,14 @@ export default class Axis extends Component {
     componentDidUpdate() {
       this.renderAxis()
     }
-  
+
     renderAxis() {
       const axisType = `axis${this.props.orient}`
       const axisl = d3Axis[axisType]()
         .scale(this.props.scale)
         .tickSize(this.props.tickSize)
         .tickPadding([6])
-        
+
       d3Select(this.axisElement).call(axisl)
 
     }

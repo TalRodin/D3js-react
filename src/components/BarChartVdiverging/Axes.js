@@ -17,7 +17,8 @@ export default ({ scales, margins, svgDimensions }) => {
       scale: scales.yScale,
       translate: `translate(${scales.xScale(0)},0)`,
       tickSize: 0,
-      tickPadding:6
+      tickPadding:6,
+      
     }
     return (
 

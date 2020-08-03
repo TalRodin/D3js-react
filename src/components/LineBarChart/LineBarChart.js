@@ -11,7 +11,7 @@ import styled from 'styled-components'
 const Box = styled.div`
 width: 900px;
 height:500px;
-background:#fbfbfb;
+background:#f8f8f8;
 margin:10%;
 `
 
