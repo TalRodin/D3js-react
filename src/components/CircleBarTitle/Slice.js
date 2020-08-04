@@ -33,9 +33,10 @@ class Slice extends React.Component {
       .padRadius(innerRadius)
     
     return (
-      <g  {...props}>
+      <g  >
         
         <path d={arc(value)} fill={"#3e4b86"} />
+      
       </g>
     );
   }
