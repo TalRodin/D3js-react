@@ -11,13 +11,12 @@ class Pie extends React.Component {
         return v.name
       })
     }
-    renderSlice(v,i) {
-        console.log(v)
-        let {innerRadius, cornerRadius, padAngle,scales} = this.props;
+    renderSlice(v) {
+        console.log('******', v)
+        let {innerRadius, cornerRadius, padAngle,scales,endAngle,outerRadius} = this.props;
         return (
           <Slice
             innerRadius={innerRadius}
-            
             cornerRadius={cornerRadius}
             padAngle={padAngle}
             value={v.value}
@@ -26,21 +25,21 @@ class Pie extends React.Component {
            
             endAngle={scales.xScale(v.name) + scales.xScale.bandwidth()}
             padradius={innerRadius}
-            outerRadius={v.value}
-            startAngle={v.name}
+            outerRadius={scales.yScale(v.value)}
+            startAngle={scales.xScale(v.name)}
             />
           );
     }
     render() {
       let {x, y, data, width, height} = this.props;
   
-      let data_values=data.map(function(v){
-        console.log(v)
-        return v
-      })
+      // let data_values=data.map(function(v){
+      //   console.log(v)
+      //   return v
+      // })
       return (
         <g transform={"translate(" + width / 2 + "," + ( height/2+100 )+ ")"}>
-          {data_values.map(this.renderSlice)}
+          {data.map(this.renderSlice)}
         </g>
       );
     }

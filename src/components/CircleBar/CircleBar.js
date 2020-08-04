@@ -13,17 +13,17 @@ class Circle extends Component {
     render() {
         const margins = {top: 10, right: 10, bottom: 10, left: 10}
 
-        let width = 460 - margins.left - margins.right;
-        let height = 460 - margins.top - margins.bottom;
-        let innerRadius=80
-        let outerRadius=Math.min(width, height) / 2
-        let radius = Math.min(width, height)/2 ;
+        let width = 460 - margins.left - margins.right
+        let height = 460 - margins.top - margins.bottom
+        let innerRadius = 80
+        let outerRadius = Math.min(width, height) / 2
+        // let radius = Math.min(width, height)/2 ;
         let x = width/2;
         let y = height/2;
 
         const xScale = this.xScale
             .align(0) 
-            .domain( data.map(function(d) { return(d.name) }))
+            .domain( data.map(d => d.name))
             .range([0, 2 * Math.PI])
 
         const yScale = this.yScale
@@ -33,18 +33,17 @@ class Circle extends Component {
         return (
           <div>
             <svg  width={width+ margins.left + margins.right} height={height + margins.top + margins.bottom} >
-              <CirleBar x={x} y={y} 
+              <CirleBar
                 width={width}
                 height={height}
-                radius={radius} 
                 scales={{ xScale, yScale }}
                 innerRadius={innerRadius}
-                // outerRadius={d=>console.log(d.value)}
+                // outerRadius={data.map(d => d.value)}
                 cornerRadius={3}
                 padAngle={0.01}
-                // startAngle={d=>console.log(d.name)}
+                // startAngle={data.map(d => d.name)}
                 padRadius={innerRadius}
-                // endAngle={d=>xScale(d.name) + xScale.bandwidth()}
+                // endAngle={data.map(d=>xScale(d.name) + xScale.bandwidth())}
                 data={data} />
             </svg>
           </div> 

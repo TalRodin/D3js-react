@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import * as d3 from 'd3';
+import { svg } from 'd3';
 
 class Slice extends React.Component {
   constructor(props) {
@@ -18,12 +19,13 @@ class Slice extends React.Component {
       padAngle,
       endAngle,
       data,
+      padradius,
       ...props
     } = this.props;
 
 
-    console.log('=====',typeof(this.props.value))
-
+    
+    {console.log('=====',outerRadius)}
 
     let arc = d3
       .arc()
@@ -36,6 +38,7 @@ class Slice extends React.Component {
     
     return (
       <g  {...props}>
+        
         <path d={arc(value)} fill={"#69b3a2"} />
       </g>
     );
