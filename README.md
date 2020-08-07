@@ -126,12 +126,6 @@ let arc = d3
 
 These are guidelines. Please feel free to propose changes to this document in a pull request.
 
-#### Table Of Contents
-
-[Code of Conduct](#code-of-conduct)
-[Steps to contribute](#Steps to contribute)
-
-
 ## Code of Conduct
 
 This project and everyone participating in it. Here, we respect each other, learn, teach. By participating, you are expected to uphold this code. 
