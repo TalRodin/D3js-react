@@ -17,7 +17,10 @@ Build with:
    1. [React](https://github.com/facebook/react)
    2. [D3js](https://github.com/d3/d3)
 
+# Features
 
+Charts, plots, graphs build in REACT using functions D3js/svg. 
+They can be easily integrated into any React app, without much knowledge of SVG
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/) © Alyona Rodina
