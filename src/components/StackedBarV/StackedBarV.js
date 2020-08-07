@@ -11,10 +11,10 @@ class BarChart extends Component {
     this.yScale = scaleBand()
   }
   render() {
-    const margins = {top: 30, right: 10, bottom: 0, left: 30}
+    const margins = {top: 30, right: 10, bottom: 0, left: 50}
     const svgDimensions = {
       width: 500,
-      height: 800
+      height: 500
     }
     const rows=['<10','10-19','20-29','30-39', '40-49','50-59','60-69','70-79','≥80']
     const maxValue = Math.max(...data.map(d => d.value))

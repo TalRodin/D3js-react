@@ -20,7 +20,7 @@ class LineChart extends Component {
     render() {
         
         let margins = {top: 20, right: 30, bottom: 30, left: 40}
-        const svgDimensions = { width: 850, height: 500}
+        const svgDimensions = { width: 550, height: 300}
         const max = d3.max(data, d => Math.abs(d.value))
         const min= d3.min(data, d => Math.abs(d.value))
        

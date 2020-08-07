@@ -2,10 +2,11 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Tool =styled.div`
-    width:40px;
-    height:40px;
+    width:30px;
+    height:30px;
     position:absolute;
     width: 100px;
+    font-size:12px;
     background-color: #f5f5f5;
     color: black;
     text-align: center;
@@ -27,7 +28,7 @@ export default ({data, scales}) => {
     const { xScale, yScale } = scales
     const styles = {
       left: `${xScale(data.value)}px`,
-      top: `${yScale(data.name)+500}px`,
+      top: `${yScale(data.name)}px`,
 
     }
     return (

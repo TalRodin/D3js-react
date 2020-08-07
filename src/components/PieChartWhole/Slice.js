@@ -47,7 +47,7 @@ class Slice extends React.Component {
           dy=".35em"
           textAnchor="middle"
           fill="black"
-          font-size="20px"
+          font-size="12px"
         >
           {this.props.label}
         </text>

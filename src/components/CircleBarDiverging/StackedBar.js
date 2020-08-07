@@ -3,36 +3,37 @@ import { scaleBand, scaleLinear } from 'd3-scale'
 import Axes from './Axes'
 import data from './data/data'
 import Bars from './Bars'
-import Tooltip from './Tooltip';
-
+import * as d3 from 'd3'
 class BarChart extends Component {
   constructor() {
     super()
-    this.xScale = scaleLinear()
-    this.yScale = scaleBand()
-    this.state = {
-      hoveredBar: null,
-    };
+    this.xScale = scaleBand()
+    this.yScale = scaleLinear()
   }
   render() {
-    const margins = { top: 30, right: 0, bottom: 10, left: 30 }
+    const margins = { top: 30, right: 0, bottom: 30, left: 40 }
     const svgDimensions = {
-      width: 500,
+      width: 800,
       height: 500
     }
-
+    const columns=['<10','10-19','20-29','30-39', '40-49','50-59','60-69','70-79','≥80']
     const maxValue = Math.max(...data.map(d => d.value))
     // const minValue = Math.min(...data.map(d => d.value))
- 
+    const  stackGen = d3.stack()
+            .keys(columns)
+            
+    
+    const stackedSeries = stackGen(data).map(d => (d.forEach(v => v.key = d.key), d))
+    
+    console.log('--------',stackedSeries )
+
     const xScale = this.xScale
-      .domain([0, maxValue])
-      .range([margins.left, svgDimensions.width - margins.right])
-      
-    const yScale = this.yScale
-      .domain(data.map(d => d.name))
-      .range([margins.top, svgDimensions.height - margins.bottom])
       .padding(0.1)
-      
+      .domain(data.map(d => d.name))
+      .range([margins.left, svgDimensions.width - margins.right])
+    const yScale = this.yScale
+      .domain([0, d3.max(stackedSeries , d => d3.max(d, d => d[1]))])
+      .range([svgDimensions.height - margins.bottom ,margins.top])
 
     
     return (
@@ -46,27 +47,19 @@ class BarChart extends Component {
         <Axes
           scales={{ xScale, yScale }}
           margins={margins}
-          svgDimensions={svgDimensions}
-         
+          svgDimensions={svgDimensions}        
         />
        
         <Bars
           scales={{ xScale, yScale }}
           margins={margins}
-          data={data}
+          data={stackedSeries }
           maxValue={maxValue}
+          columns={columns}
           svgDimensions={svgDimensions}
-          onMouseOverCallback={(datum) => this.setState({ hoveredBar: datum })}
-          onMouseOutCallback={() => this.setState({ hoveredBar: null })}
-          
         />
       </svg>
-      {this.state.hoveredBar ? (
-          <Tooltip
-            data={this.state.hoveredBar}
-            scales={{ xScale, yScale }}
-          />
-        ) : null}
+   
       </div>
     )
   }

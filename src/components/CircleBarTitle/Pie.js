@@ -33,7 +33,7 @@ class Pie extends React.Component {
                 <text 
               font-family="sans-serif" 
               fill="black"
-              font-size="11"
+              font-size="10"
               alignment-baseline='middle'
               text-anchor={(scales.xScale(v.name) + scales.xScale.bandwidth() / 2 + Math.PI) % (2 * Math.PI) < Math.PI ? "end" : "start"}
               // dy="0.35em"

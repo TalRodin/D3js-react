@@ -19,7 +19,7 @@ class LineChart extends Component {
    
     render() {
         
-        let margins = {top: 20, right: 20, bottom: 30, left: 50}
+        let margins = {top: 10, right: 20, bottom: 30, left: 30}
 
         const svgDimensions = { width: 960 - margins.left - margins.right,
            height: 500 - margins.top - margins.bottom}
@@ -40,7 +40,7 @@ class LineChart extends Component {
         return (
         <div>
             
-          <svg  viewBox={`0 0 ${svgDimensions.width} ${svgDimensions.width}`}>
+          <svg  viewBox={`0 0 ${svgDimensions.width+20} ${svgDimensions.width+20}`}>
             <Axes
             scales={{ xScale, yScale }}
             margins={margins}
