@@ -19,10 +19,10 @@ class LineChart extends Component {
    
     render() {
         
-        let margins = {top: 10, right: 20, bottom: 30, left: 30}
+        let margins = {top: 10, right: 30, bottom: 30, left: 40}
 
-        const svgDimensions = { width: 960 - margins.left - margins.right,
-           height: 500 - margins.top - margins.bottom}
+        const svgDimensions = { width: 1060 - margins.left - margins.right,
+           height: 600 - margins.top - margins.bottom}
         const max = d3.max(data, d => Math.abs(d.value))
         const min= d3.min(data, d => Math.abs(d.value))
         let parseTime = d3.timeParse("%d-%b-%y");

@@ -35,18 +35,18 @@ export default ({ scales, margins, svgDimensions }) => {
         transform ="rotate(-90)"
         fill="black"
         text-anchor="end"
-        font-size="10px"
+        font-size="8px"
         >
           {}
         </text>
         <text
           y='4'
-          dy="36em"
+          dy="30em"
           dx='73em'
           transform ="rotate(0)"
           fill="black"
           text-anchor="start"
-          font-size="10px"
+          font-size="8px"
         >
           {}
         </text>

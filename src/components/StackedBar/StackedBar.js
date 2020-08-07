@@ -13,7 +13,7 @@ class BarChart extends Component {
   render() {
     const margins = { top: 30, right: 0, bottom: 30, left: 70 }
     const svgDimensions = {
-      width: 800,
+      width: 1100,
       height: 500
     }
     const columns=['<10','10-19','20-29','30-39', '40-49','50-59','60-69','70-79','≥80']

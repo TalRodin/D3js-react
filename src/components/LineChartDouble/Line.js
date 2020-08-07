@@ -27,16 +27,16 @@ export default class Line extends Component {
         <path
           d={line(data)}
           fill={'none'}
-          stroke={'steelblue'}
-          stroke-width={'1.5'}
+          stroke={'#6d5dfc'}
+          stroke-width={'1'}
           stroke-linejoin={'round'}
           stroke-linecap={'round'}
         />
       <path
           d={line2(data)}
           fill={'none'}
-          stroke={'red'}
-          stroke-width={'1.5'}
+          stroke={'#ff7b89'}
+          stroke-width={'1'}
           stroke-linejoin={'round'}
           stroke-linecap={'round'}
         />
