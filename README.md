@@ -12,6 +12,13 @@ This project has been created to quickly and effortlessly build beautiful D3js p
 ![Double Line Chart](/public/DoubleLine.png?raw=true)
 ![Pie Chart](/public/PieChart.png?raw=true)
 
+# Tech/framework used
+Build with:
+   1. [React](https://github.com/facebook/react)
+   2. [D3js](https://github.com/d3/d3)
+
+
+
 ## License
 [MIT](https://choosealicense.com/licenses/mit/) © Alyona Rodina
 
