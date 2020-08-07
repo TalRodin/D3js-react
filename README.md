@@ -1,3 +1,20 @@
+# D3js-react
+The project is about D3js plots build in React.
+
+# Motivation
+The project created to be able quickly and effortlessly build beautiful D3js plots in React.
+
+#Screenshots
+Examples:
+![Circle Bar Chart](CircleBarChart.png)
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/) © Alyona Rodina
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

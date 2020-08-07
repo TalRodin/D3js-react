@@ -42,7 +42,7 @@ function App() {
        <CircleBar />
        <CircleBarTitle />
        <CircleBarDiverging />
-       <StackedBarDiverging /> 
+       {/* <StackedBarDiverging />  */}
     </div>
   );
 }

@@ -35,7 +35,7 @@ class Slice extends React.Component {
     return (
       <g  >
         {/* <path d={arc(value)} fill={"#3e4b86"} /> */}
-        <path d={arc(value)} fill={"red"} />
+        <path d={arc(value)} fill={"#fb7a8e"} />
       </g>
     );
   }
