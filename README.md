@@ -24,37 +24,101 @@ They can be easily integrated into any React app, without much knowledge of SVG
 
 # Code Example
 
+CircleBarTitleDiverging.js
+
 ```
-    const columns=['<10','10-19','20-29','30-39', '40-49','50-59','60-69','70-79','≥80']
-    const stackGen = d3.stack()
-                       .keys(columns)
-    const stackedSeries = stackGen(data).map(d => (d.forEach(v => v.key = d.key), d))
+return (
+          <div>
+            <svg  width={width+ margins.left + margins.right} height={height + margins.top + margins.bottom} >
+              <CirleBar
+                width={width}
+                height={height}
+                scales={{ xScale, yScale, ybisScale}}
+                innerRadius={innerRadius}
+                margins={margins}
+                cornerRadius={3}
+                padAngle={0.01}
+                padRadius={innerRadius}
+                data={data} />
+            </svg>
+          </div> 
+        );
 ```
+CircleBar component
+
 ```
-    const xScale = this.xScale
-      .padding(0.1)
-      .domain(data.map(d => d.name))
-      .range([margins.left, svgDimensions.width - margins.right])
-    const yScale = this.yScale
-      .domain([0, d3.max(stackedSeries , d => d3.max(d, d => d[1]))])
-      .range([svgDimensions.height - margins.bottom ,margins.top])
+  render() {
+      let {data, width, height,margins} = this.props;
+      return (
+        <g transform={"translate(" + (width/2 + margins.left) + "," + (height/2 + margins.top) + ")"}>
+          {data.map(this.renderSlice)}
+        </g>
+      );
+    }
 ```
+
+function renderSlice
 ```
-    const bars = (
-      data.map(datum =>
-        datum.map((d,i)=>
-          <rect
-            key={i}
-            x={xScale(d.data.name)}
-            y={yScale(d[1])}
-            height={yScale(d[0])-yScale(d[1])}
-            width={xScale.bandwidth()}
-            fill={this.colorScale(d.key)}
-          />
-          )
-        )
-      )
+   renderSlice(v) {
+        let {innerRadius,cornerRadius, padAngle,scales} = this.props;
+        return (
+          <>
+          <Slice
+            innerRadius={innerRadius}
+            cornerRadius={cornerRadius}
+            padAngle={padAngle}
+            value={v.value}
+            endAngle={scales.xScale(v.name) + scales.xScale.bandwidth()}
+            padradius={innerRadius}
+            outerRadius={scales.yScale(v.value)}
+            startAngle={scales.xScale(v.name)}
+            />
+            <Slice2
+            innerRadius={scales.ybisScale(0)}
+            cornerRadius={cornerRadius}
+            padAngle={padAngle}
+            value={v.value}
+            endAngle={scales.xScale(v.name) + scales.xScale.bandwidth()}
+            padradius={innerRadius}
+            outerRadius={scales.ybisScale(v.value)}
+            startAngle={scales.xScale(v.name)}
+            />
 ```
+Slice.js
+```
+let arc = d3
+      .arc()
+      .innerRadius(innerRadius)
+      .outerRadius(outerRadius)
+      .padAngle(padAngle)
+      .startAngle(startAngle)
+      .endAngle(endAngle)
+      .padRadius(innerRadius)
+    
+    return (
+      <g  >
+        <path d={arc(value)} fill={"#758db7"} />
+      </g>
+    );
+```
+Slice2.js
+```
+let arc = d3
+      .arc()
+      .innerRadius(innerRadius)
+      .outerRadius(outerRadius)
+      .padAngle(padAngle)
+      .startAngle(startAngle)
+      .endAngle(endAngle)
+      .padRadius(innerRadius)
+    
+    return (
+      <g>
+        <path d={arc(value)} fill={"#fb7a8e"} />
+      </g>
+    );
+```
+
 ## License
 [MIT](https://choosealicense.com/licenses/mit/) © Alyona Rodina
 
