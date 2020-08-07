@@ -6,7 +6,7 @@ The project created to be able quickly and effortlessly build beautiful D3js plo
 
 #Screenshots
 Examples:
-![Circle Bar Chart](CircleBarChart.png)
+![Circle Bar Chart](/Users/alyonarodin/Desktop/d3-charts/my-app/public/CircleBarChart.png)
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/) © Alyona Rodina
