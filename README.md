@@ -119,7 +119,10 @@ let arc = d3
     );
 ```
 
-## License
+# Credits
+[observablehq](https://observablehq.com/)
+
+# License
 [MIT](https://choosealicense.com/licenses/mit/) © Alyona Rodina
 
 
