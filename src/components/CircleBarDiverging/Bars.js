@@ -9,8 +9,7 @@ export default class Bars extends Component {
     
       this.colorScale =scaleOrdinal()
         .domain(this.props.columns)
-        .range(['#30316b','#303161','#30316a','#eee','#000','#f8f8f8','red','blue','#30316b'])
-        
+        .range(['#30316b','#303161','#30316a','#eee','#000','#f8f8f8','red','blue','#30316b']) 
     }
    
     render() {
@@ -19,24 +18,19 @@ export default class Bars extends Component {
       const { xScale, yScale } = scales
       const { height } = svgDimensions
       console.log('-------',data)
+      
       const bars = (
         data.map(datum =>
-  
            datum.map((d,i)=>
-           
           <rect
-            key={d.i}
-
+            key={i}
             x={xScale(d.data.name)}
             y={yScale(d[1])}
             height={yScale(d[0])-yScale(d[1])}
             width={xScale.bandwidth()}
             fill={this.colorScale(d.key)}
           />
-           )
-          
-        
-       
+          )
         )
       )
       

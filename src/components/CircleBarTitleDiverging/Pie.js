@@ -12,8 +12,7 @@ class Pie extends React.Component {
       })
     }
     renderSlice(v) {
-        console.log('******', v)
-        let {innerRadius,cornerRadius, padAngle,scales,endAngle,outerRadius} = this.props;
+        let {innerRadius,cornerRadius, padAngle,scales} = this.props;
         return (
           <>
           <Slice
@@ -53,7 +52,7 @@ class Pie extends React.Component {
           );
     }
     render() {
-      let {x, y, data, width, height,margins} = this.props;
+      let {data, width, height,margins} = this.props;
       return (
         <g transform={"translate(" + (width/2 + margins.left) + "," + (height/2 + margins.top) + ")"}>
           {data.map(this.renderSlice)}

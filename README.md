@@ -22,6 +22,39 @@ Build with:
 Charts, plots, graphs build in REACT using functions D3js/svg. 
 They can be easily integrated into any React app, without much knowledge of SVG
 
+# Code Example
+
+```
+    const columns=['<10','10-19','20-29','30-39', '40-49','50-59','60-69','70-79','≥80']
+    const stackGen = d3.stack()
+                       .keys(columns)
+    const stackedSeries = stackGen(data).map(d => (d.forEach(v => v.key = d.key), d))
+```
+```
+    const xScale = this.xScale
+      .padding(0.1)
+      .domain(data.map(d => d.name))
+      .range([margins.left, svgDimensions.width - margins.right])
+    const yScale = this.yScale
+      .domain([0, d3.max(stackedSeries , d => d3.max(d, d => d[1]))])
+      .range([svgDimensions.height - margins.bottom ,margins.top])
+```
+```
+    const bars = (
+      data.map(datum =>
+        datum.map((d,i)=>
+          <rect
+            key={i}
+            x={xScale(d.data.name)}
+            y={yScale(d[1])}
+            height={yScale(d[0])-yScale(d[1])}
+            width={xScale.bandwidth()}
+            fill={this.colorScale(d.key)}
+          />
+          )
+        )
+      )
+```
 ## License
 [MIT](https://choosealicense.com/licenses/mit/) © Alyona Rodina
 

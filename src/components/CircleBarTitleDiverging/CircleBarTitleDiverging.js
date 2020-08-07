@@ -17,7 +17,6 @@ class Circle extends Component {
         let height = 460 - margins.top - margins.bottom
         let innerRadius = 100
         let outerRadius = Math.min(width, height) / 2
-        // let radius = Math.min(width, height)/2 ;
         let x = width/2;
         let y = height/2;
 
@@ -44,12 +43,9 @@ class Circle extends Component {
                 scales={{ xScale, yScale, ybisScale}}
                 innerRadius={innerRadius}
                 margins={margins}
-                // outerRadius={data.map(d => d.value)}
                 cornerRadius={3}
                 padAngle={0.01}
-                // startAngle={data.map(d => d.name)}
                 padRadius={innerRadius}
-                // endAngle={data.map(d=>xScale(d.name) + xScale.bandwidth())}
                 data={data} />
             </svg>
           </div> 
