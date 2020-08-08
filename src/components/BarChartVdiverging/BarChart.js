@@ -13,8 +13,8 @@ class BarChart extends Component {
   render() {
     const margins = { top: 30, right: 60, bottom: 10, left: 60}
     const svgDimensions = {
-      width: 700,
-      height: 900
+      width:800,
+      height: 400
     }
 
     const maxValue = Math.max(...data.map(d => d.value))
@@ -40,6 +40,7 @@ class BarChart extends Component {
         <Axes
           scales={{ xScale, yScale }}
           margins={margins}
+          data={data}
           svgDimensions={svgDimensions}
          
         />

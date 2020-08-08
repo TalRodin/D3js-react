@@ -1,9 +1,9 @@
 import React from 'react'
-import Axis from './Axis'
-
-export default ({ scales, margins, svgDimensions }) => {
+import Axisx from './Axisx'
+import Axisy from './Axisy'
+export default ({ scales, margins, svgDimensions,data }) => {
     const { height, width } = svgDimensions
-  
+    console.log(data)
     const xProps = {
       orient: 'Top',
       scale: scales.xScale,
@@ -17,14 +17,14 @@ export default ({ scales, margins, svgDimensions }) => {
       scale: scales.yScale,
       translate: `translate(${scales.xScale(0)},0)`,
       tickSize: 0,
-      tickPadding:6,
-      
+      tickPadding:10,
+      data:data
     }
     return (
 
       <g>
-        <Axis {...xProps} />
-        <Axis {...yProps} />
+        <Axisx {...xProps} />
+        <Axisy {...yProps} />
       </g>
     )
   }

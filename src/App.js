@@ -26,9 +26,9 @@ function App() {
     <div >
        {/* <BarChartH /> */}
        {/* <BarChartV /> */}
-       <BarChartHdiverging />
-       {/* <BarChartVdiverging />
-       <PieChart />
+       {/* <BarChartHdiverging /> */}
+       <BarChartVdiverging />
+       {/* <PieChart />
        <PieChartWhole />
        <LineChartM />
        <LineChartY />
