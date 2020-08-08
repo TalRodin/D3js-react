@@ -11,7 +11,7 @@ export default class Bars extends Component {
       this.onMouseOut = this.onMouseOut.bind(this);
       this.colorScale = scaleLinear()
         .domain([0, this.props.maxValue])
-        .range(['#b3e5fc', '#01579b'])
+        .range(['#7b94ba', '#7b94ba'])
         .interpolate(interpolateLab)
     }
     onMouseOver() {

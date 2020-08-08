@@ -11,7 +11,7 @@ export default class Bars extends Component {
       this.onMouseOut = this.onMouseOut.bind(this);
       this.colorScale = scaleLinear()
         .domain([0, this.props.maxValue])
-        .range(['#b3e5fc', '#01579b'])
+        .range(['#ff7b89', '#ff7b89'])
         .interpolate(interpolateLab)
     }
     onMouseOver() {
@@ -21,11 +21,9 @@ export default class Bars extends Component {
       this.setState({ isHovered: false });
     }
     render() {
-      console.log('>>>>>>',this)
       const { scales, margins, data, svgDimensions, ...props } = this.props
       const { xScale, yScale } = scales
       const { height } = svgDimensions
-     
       const bars = (
         data.map(datum =>
           <rect
@@ -37,12 +35,9 @@ export default class Bars extends Component {
             fill={this.colorScale(datum.value)}
             onMouseOver={() => this.props.onMouseOverCallback(datum)}
             onMouseOut={() => this.props.onMouseOutCallback(null)}
-            
           />
         )
       )
-      
-      
       return (
         <g onMouseOver={this.onMouseOver} onMouseOut={this.onMouseOut}  {...props}>{bars}</g>
       )

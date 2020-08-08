@@ -24,10 +24,10 @@ import StackedBarDiverging from './components/StackedBarDiverging/StackedBar'
 function App() {
   return (
     <div >
-       <BarChartH />
-       <BarChartV />
+       {/* <BarChartH /> */}
+       {/* <BarChartV /> */}
        <BarChartHdiverging />
-       <BarChartVdiverging />
+       {/* <BarChartVdiverging />
        <PieChart />
        <PieChartWhole />
        <LineChartM />
@@ -41,7 +41,7 @@ function App() {
        <StackedBarV />
        <CircleBar />
        <CircleBarTitle />
-       <CircleBarDiverging />
+       <CircleBarDiverging /> */}
        {/* <StackedBarDiverging />  */}
     </div>
   );

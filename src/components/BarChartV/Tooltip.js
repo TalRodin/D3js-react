@@ -2,33 +2,34 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Tool =styled.div`
-    width:30px;
-    height:30px;
-    position:absolute;
-    width: 100px;
-    font-size:12px;
-    background-color: #f5f5f5;
-    color: black;
+    width: 120px;
+    background-color: #eee;
+    color: #414141;
     text-align: center;
     border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
     z-index: 1;
+    top: -5px;
+    left: 110%;
+    opacity:0.8;
     transition: opacity 0.3s;
-//   &:after{
-//     content: "";
-//     position: absolute;
-//     top: 100%;
-//     left: 50%;
-//     margin-left: -5px;
-//     border-width: 5px;
-//     border-style: solid;
-//     border-color: #f5f5f5 transparent transparent transparent;
-//   }
+    &:after{
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 100%;
+      margin-top: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: transparent #eee transparent transparent;
+    }
 `
 export default ({data, scales}) => {
     const { xScale, yScale } = scales
     const styles = {
-      left: `${xScale(data.value)}px`,
-      top: `${yScale(data.name)}px`,
+      left: `${xScale(data.value)-10}px`,
+      top: `${yScale(data.name)-17}px`,
 
     }
     return (
