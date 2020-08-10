@@ -35,7 +35,7 @@ class BarChart extends Component {
     ]
     const groupKey = 'state'
 
-
+    console.log(data)
     const maxValue = Math.max(...data.map(d => d.value))
     // const minValue = Math.min(...data.map(d => d.value))
  
@@ -64,9 +64,7 @@ class BarChart extends Component {
           scales={{ xScale0, xScale1, yScale }}
           margins={margins}
           svgDimensions={svgDimensions}
-         
-        />
-       
+        /> 
         <Bars
           scales={{ xScale0,xScale1, yScale }}
           margins={margins}
@@ -75,9 +73,7 @@ class BarChart extends Component {
           groupKey={groupKey}
           maxValue={maxValue}
           svgDimensions={svgDimensions}
-        
         />
-          
       </svg>
 
       </div>

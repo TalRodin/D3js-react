@@ -18,11 +18,13 @@ export default class Bars extends Component {
       const { height } = svgDimensions
 
       const Data=data.map(d=>keys.map(key=>({key,value:d[key]})))
-      console.log(Data)
+      // console.log(Data)
+      
 
       const bars = (
         Data.map(datum =>
           datum.map(d=>
+           
             <rect
             // key={datum.state}
             x={xScale1(d.key)}  
@@ -35,10 +37,11 @@ export default class Bars extends Component {
         )
       )
       return (
+        data.map(d=>
+          <g transform={`translate(${xScale0(d[groupKey])},0)`}>
+               {bars}
+          </g>)
         
-         <g transform={`translate(${xScale0([groupKey])},0)`} >
-          {bars}
-          </g>
         
           
       )
