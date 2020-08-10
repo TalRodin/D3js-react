@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import { scaleBand, scaleLinear } from 'd3-scale'
+import { group,rollup} from 'd3-array'
 import Axes from './Axes'
 import data from './data/data'
 import Bars from './Bars'
 import * as d3 from 'd3'
+
 class BarChart extends Component {
   constructor() {
     super()
@@ -16,53 +18,61 @@ class BarChart extends Component {
       width: 500,
       height: 337
     }
-    const rows=['<10','10-19','20-29','30-39', '40-49','50-59','60-69','70-79','≥80']
+    const rows = [
+      "Mostly false",
+      "False",
+      "Pants on fire!",
+      "Half true",
+      "Mostly true",
+      "True",
+    ]
     
     const categories = {
       "pants-fire": "Pants on fire!",
       "false": "False",
       "mostly-false": "Mostly false",
-      "barely-true": "Mostly false",
+      "barely-true": "Mostly false", // recategorized
       "half-true": "Half true",
       "mostly-true": "Mostly true",
       "true": "True"
     };
-    const negatives = ["Pants on fire!", "False", "Mostly false"]
-    const positives = ["Half true", "Mostly true", "True"]
+    const d=rollup(data, group => {
+      const sum = d3.sum(group, d => d.value);
+      console.log(sum)
+      for (const d of group) d.value /= sum;
+    }, d => d.name);
+    
+    console.log(d)
+
+
     const maxValue = Math.max(...data.map(d => d.value))
     // const minValue = Math.min(...data.map(d => d.value))
     const  stackGen = d3.stack()
-                      .key()
-            
-    
+            .keys(rows)
     const stackedSeries = stackGen(data).map(d => (d.forEach(v => v.key = d.key), d))
-  //   const bias = d3.rollups(data, v => d3.sum(v, d => d.value * Math.min(0, signs.get(d.category))), d => d.name)
-  // .sort(([, a], [, b]) => d3.ascending(a, b))
-    console.log('--------',stackedSeries )
-
+    
+    console.log(stackedSeries)
+    
     const xScale = this.xScale
-      .domain(d3.extent(stackedSeries.flat(2)))
-      .rangeRound([margins.left, svgDimensions.width - margins.right])      
+      .domain([0, d3.max(stackedSeries , d => d3.max(d, d => d[1]))])
+      .range([margins.left, svgDimensions.width - margins.right])      
     const yScale = this.yScale
-      .padding(2 / 33)
+      .padding(0.1)
       .domain(data.map(d => d.name))
       .range([margins.top, svgDimensions.height - margins.bottom])
 
-    
+
+
     return (
-      
       <div>
       <svg  
-      
       width={svgDimensions.width} height={svgDimensions.height}
      >
-        
         <Axes
           scales={{ xScale, yScale }}
           margins={margins}
           svgDimensions={svgDimensions}        
         />
-       
         <Bars
           scales={{ xScale, yScale }}
           margins={margins}
@@ -72,9 +82,9 @@ class BarChart extends Component {
           svgDimensions={svgDimensions}
         />
       </svg>
-   
       </div>
     )
   }
 }
 export default BarChart
+

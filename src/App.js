@@ -18,17 +18,17 @@ import CircleBar from './components/CircleBar/CircleBar'
 import CircleBarTitle from './components/CircleBarTitle/CircleBar'
 import CircleBarDiverging from './components/CircleBarTitleDiverging/CircleBarTitleDiverging'
 import StackedBarDiverging from './components/StackedBarDiverging/StackedBar'
-
+import GroupedBarChart from './components/GroupedBarChart/BarChart'
 
 
 function App() {
   return (
     <div >
-       {/* <BarChartH /> */}
-       {/* <BarChartV /> */}
-       {/* <BarChartHdiverging /> */}
+       {/* <BarChartH />
+       <BarChartV />
+       <BarChartHdiverging />
        <BarChartVdiverging />
-       {/* <PieChart />
+       <PieChart />
        <PieChartWhole />
        <LineChartM />
        <LineChartY />
@@ -43,6 +43,7 @@ function App() {
        <CircleBarTitle />
        <CircleBarDiverging /> */}
        {/* <StackedBarDiverging />  */}
+       <GroupedBarChart />
     </div>
   );
 }
