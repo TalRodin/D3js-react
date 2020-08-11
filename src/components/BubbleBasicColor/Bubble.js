@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
-import { scaleLinear } from 'd3-scale'
+import { scaleLinear,scaleOrdinal } from 'd3-scale'
 import { interpolateLab } from 'd3-interpolate'
 import * as d3 from "d3"
 
 export default class Bubble extends Component {
     constructor(props) {
       super(props)
-      this.colorScale = scaleLinear()
-        .domain([this.props.minValue, this.props.maxValue])
-        .range(['#d971bb', '#5142f5'])
-        .interpolate(interpolateLab)
+      this.colorScale = scaleOrdinal()
+        .domain(["Asia", "Europe", "Americas", "Africa", "Oceania"])
+        .range(d3.schemeSet2);
+        // .interpolate(interpolateLab)
   }
     render() {
       const { scales, margins, data, svgDimensions, ...props } = this.props
@@ -23,15 +23,16 @@ export default class Bubble extends Component {
             cx={xScale(datum.gdpPercap)}  
             cy={yScale(datum.lifeExp)}
             r={zScale(datum.pop)}
-            fill="#69b3a2"
+            fill={this.colorScale(datum.continent)}
             opacity="0.7"
-            stroke="black"
+            stroke="white"
+            stroke-width="1px"
           />
          )
         )
       return (
-        
-        <g transform={`translate(${margins.left}, ${margins.top})`}>{bubble}</g>
+        <g transform={`translate(${margins.left}, ${margins.top})`}>
+      {bubble}</g>
       )
     }
   }
