@@ -15,12 +15,14 @@ export default class Bars extends Component {
       const { scales, margins, data, keys,groupKey, svgDimensions, ...props } = this.props
       const { xScale1, xScale0, yScale } = scales
       const { height } = svgDimensions
-
-      const Data=data.map(d=>keys.map(key=>({key,value:d[key]})))
+      console.log(data)
+      const Data=data.map(d=>keys.map(key=>({key: key,value:d[key]})))
       console.log(Data)
       const bars = (
         Data.map(datum =>
+           
           datum.map(d=>
+     
             <rect
             // key={datum.state}
             x={xScale1(d.key)} 
@@ -30,14 +32,19 @@ export default class Bars extends Component {
             fill={this.colorScale(d.key)}
           />
           )
-        )
+
+        ) 
       )
       return (
+      
           data.map(d=>
           <g transform={`translate(${xScale0(d[groupKey])},0)`}>
-              {bars}
+             {bars}
           </g>
+           
           )
+          
+       
       )
     }
 }

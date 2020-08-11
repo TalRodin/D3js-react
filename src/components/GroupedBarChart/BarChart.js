@@ -35,7 +35,7 @@ class BarChart extends Component {
     ]
     const groupKey = 'state'
 
-    console.log(data)
+
     const maxValue = Math.max(...data.map(d => d.value))
     // const minValue = Math.min(...data.map(d => d.value))
  
