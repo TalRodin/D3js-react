@@ -24,6 +24,7 @@ import BubbleBasicColor from './components/BubbleBasicColor/BubbleChart'
 import MissingLineChart from './components/MissingLineChart/LineChart'
 import MissingAreaChart from './components/MissingAreaChart/LineChart'
 import AreaLineChart from './components/AreaLineChart/LineChart'
+import AreaStackedChart from './components/AreaStackedChart/LineChart'
 
 function App() {
   return (
@@ -52,7 +53,8 @@ function App() {
        <BubbleBasicColor /> */}
        {/* <MissingLineChart/>
        <MissingAreaChart /> */}
-      <AreaLineChart />
+      {/* <AreaLineChart /> */}
+      <AreaStackedChart/>
     </div>
   );
 }

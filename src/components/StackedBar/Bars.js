@@ -7,7 +7,7 @@ export default class Bars extends Component {
     constructor(props) {
       super(props)
     
-      this.colorScale =scaleOrdinal()
+      this.colorScale =scaleLinear()
         .domain(this.props.columns)
         .range(['#6196ff','#dcbeff','#fabed4','#ffd8b1','#fffac8','#aaffc3','#469990','#ff7b89','#758db7'])
         
