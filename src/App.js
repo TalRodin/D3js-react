@@ -23,6 +23,7 @@ import BubbleBasic from './components/BubbleBasic/BubbleChart'
 import BubbleBasicColor from './components/BubbleBasicColor/BubbleChart'
 import MissingLineChart from './components/MissingLineChart/LineChart'
 import MissingAreaChart from './components/MissingAreaChart/LineChart'
+import AreaLineChart from './components/AreaLineChart/LineChart'
 
 function App() {
   return (
@@ -49,8 +50,9 @@ function App() {
        <GroupedBarChart />
        <BubbleBasic />
        <BubbleBasicColor /> */}
-       {/* <MissingLineChart/> */}
-       <MissingAreaChart />
+       {/* <MissingLineChart/>
+       <MissingAreaChart /> */}
+      <AreaLineChart />
     </div>
   );
 }
