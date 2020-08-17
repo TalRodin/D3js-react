@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { scaleBand, scaleLinear } from 'd3-scale'
-import { group,rollup} from 'd3-array'
+import { group,rollups,rollup} from 'd3-array'
 import Axes from './Axes'
 import data from './data/data'
 import Bars from './Bars'
@@ -27,40 +27,45 @@ class BarChart extends Component {
       "True",
     ]
     
-    const categories = {
-      "pants-fire": "Pants on fire!",
-      "false": "False",
-      "mostly-false": "Mostly false",
-      "barely-true": "Mostly false", // recategorized
-      "half-true": "Half true",
-      "mostly-true": "Mostly true",
-      "true": "True"
-    };
-    const d=rollup(data, group => {
-      const sum = d3.sum(group, d => d.value);
-      console.log(sum)
-      for (const d of group) d.value /= sum;
-    }, d => d.name);
     
-    console.log(d)
+    const columns = ["speaker", "ruling", "count"]
+    const negatives=["Pants on fire!", "False", "Mostly false"]
+    const positives = ["Half true", "Mostly true", "True"]
 
+    const signs = new Map([].concat(
+      negatives.map(d => [d, -1]),
+      positives.map(d => [d, +1])
+    ))
+    
+    const bias = rollups(data, v => d3.sum(v, d => d.value * Math.min(0, signs.get(d.category))), d => d.name)
+    .sort(([, a], [, b]) => d3.ascending(a, b))
+   
+    const series = d3.stack()
+    .keys([].concat(negatives.slice().reverse(), positives))
+    .value(([, value], category) => signs.get(category) * (value.get(category) || 0))
+    .offset(d3.stackOffsetDiverging)
+    (rollups(data, data => rollup(data, ([d]) => d.value, d => d.category), d => d.name))
+
+//   const  stackGen = d3.stack()
+//          .keys([].concat(negatives.slice().reverse(), positives))
+//   console.log(stackGen)
+
+// const stackedSeries = stackGen(data).map(d => (d.forEach(v => v.key = d.key), d))
+
+
+
+console.log(series)
 
     const maxValue = Math.max(...data.map(d => d.value))
     // const minValue = Math.min(...data.map(d => d.value))
-    const  stackGen = d3.stack()
-            .keys(rows)
-    const stackedSeries = stackGen(data).map(d => (d.forEach(v => v.key = d.key), d))
-    
-    console.log(stackedSeries)
-    
-    const xScale = this.xScale
-      .domain([0, d3.max(stackedSeries , d => d3.max(d, d => d[1]))])
-      .range([margins.left, svgDimensions.width - margins.right])      
-    const yScale = this.yScale
-      .padding(0.1)
-      .domain(data.map(d => d.name))
-      .range([margins.top, svgDimensions.height - margins.bottom])
 
+    const xScale = this.xScale
+      .domain(d3.extent(series.flat(2)))
+      .rangeRound([margins.left, svgDimensions.width - margins.right])     
+    const yScale = this.yScale
+      .padding(2 / 33)
+      .domain(bias.map(([name]) => name))
+      .rangeRound([margins.top, svgDimensions.height - margins.bottom])
 
 
     return (
@@ -76,7 +81,7 @@ class BarChart extends Component {
         <Bars
           scales={{ xScale, yScale }}
           margins={margins}
-          data={stackedSeries }
+          data={series }
           maxValue={maxValue}
           rows={rows}
           svgDimensions={svgDimensions}

@@ -31,34 +31,34 @@ import ScatterPlotMultipleSeries from './components/ScatterPlotMultipleSeries/Li
 function App() {
   return (
     <div >
-       {/* <BarChartH />
-       <BarChartV />
-       <BarChartHdiverging />
-       <BarChartVdiverging />
-       <PieChart />
-       <PieChartWhole />
-       <LineChartM />
-       <LineChartY />
-       <LineChartD />
-       <BubbleChart />
-       <LineChartDouble />
-       <AreaChart />
-       <LineBarChart />
-       <StackedBar />
-       <StackedBarV />
-       <CircleBar />
-       <CircleBarTitle />
-       <CircleBarDiverging />
-       <StackedBarDiverging /> 
-       <GroupedBarChart />
-       <BubbleBasic />
-       <BubbleBasicColor /> */}
-       {/* <MissingLineChart/>
-       <MissingAreaChart /> */}
-      {/* <AreaLineChart /> */}
-      {/* <AreaStackedChart/> */}
-      {/* <ScatterPlotBasic/> */}
-      <ScatterPlotMultipleSeries/>
+        {/* <BarChartH />
+        <BarChartV />
+        <BarChartHdiverging />
+        <BarChartVdiverging />
+        <PieChart />
+        <PieChartWhole />
+        <LineChartM />
+        <LineChartY />
+        <LineChartD />
+        <BubbleChart />
+        <LineChartDouble />
+        <AreaChart />
+        <LineBarChart />
+        <StackedBar />
+        <StackedBarV />
+        <CircleBar />
+        <CircleBarTitle />
+        <CircleBarDiverging /> */}
+        <StackedBarDiverging /> 
+        {/* <GroupedBarChart />
+        <BubbleBasic />
+        <BubbleBasicColor />
+        <MissingLineChart/>
+        <MissingAreaChart />
+        <AreaLineChart />
+        <AreaStackedChart/>
+        <ScatterPlotBasic/> */}
+        {/* <ScatterPlotMultipleSeries/> */}
     </div>
   );
 }

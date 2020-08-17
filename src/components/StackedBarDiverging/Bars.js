@@ -18,17 +18,18 @@ export default class Bars extends Component {
       const { scales, margins, data, svgDimensions, ...props } = this.props
       const { xScale, yScale } = scales
       const { height } = svgDimensions
-      console.log('-------',data)
+
       const bars = (
         data.map(datum => 
            datum.map((d,i)=>     
+          //  console.log(d)
           <rect
             key={d.i}
             x={xScale(d[0])}
-            y={yScale(d.data.name)}
+            y={yScale(d.data[0])}
             height={yScale.bandwidth()}
             width={xScale(d[1])-xScale(d[0])}
-            fill={this.colorScale(d.key)}
+            fill={this.colorScale(datum.key)}
           />
            )
         )
