@@ -12,7 +12,7 @@ export default class Line extends Component {
     const { scales, margins, data, svgDimensions, ...props } = this.props;
     const { xScale, yScale } = scales;
     const { height, width } = svgDimensions;
-
+    console.log(data)
     
     let line =d3.line()
     .x(d => xScale(d.date))

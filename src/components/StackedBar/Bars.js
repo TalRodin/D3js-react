@@ -34,13 +34,8 @@ export default class Bars extends Component {
             fill={this.colorScale(d.key)}
           />
            )
-          
-        
-       
         )
       )
-      
-      
       return (
         <g >
           {bars}

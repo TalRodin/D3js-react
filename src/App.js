@@ -26,7 +26,7 @@ import MissingAreaChart from './components/MissingAreaChart/LineChart'
 import AreaLineChart from './components/AreaLineChart/LineChart'
 import AreaStackedChart from './components/AreaStackedChart/LineChart'
 import ScatterPlotBasic from './components/ScatterPlotBasic/LineChart'
-
+import ScatterPlotMultipleSeries from './components/ScatterPlotMultipleSeries/LineChart'
 
 function App() {
   return (
@@ -57,7 +57,8 @@ function App() {
        <MissingAreaChart /> */}
       {/* <AreaLineChart /> */}
       {/* <AreaStackedChart/> */}
-      <ScatterPlotBasic/>
+      {/* <ScatterPlotBasic/> */}
+      <ScatterPlotMultipleSeries/>
     </div>
   );
 }
