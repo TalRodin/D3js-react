@@ -49,15 +49,14 @@ class BarChart extends Component {
 
     const maxValue = Math.max(...series.map(d => d[0]))
     const minValue = Math.min(...series.map(d => d[1]))
-
+    
     const xScale = this.xScale
-      .padding(0.1)
+      .padding(2 / 33)
       .domain(bias.map(([name]) => name))
-      .rangeRound([margins.left, svgDimensions.width - margins.right])
+      .rangeRound([margins.left, svgDimensions.width - margins.right]) 
     const yScale = this.yScale
-      .domain(d3.extent(series.flat(2)))
-      .rangeRound([svgDimensions.height - margins.bottom,margins.top ]) 
-
+    .domain(d3.extent(series.flat(2)))
+    .rangeRound([margins.top, svgDimensions.height - margins.bottom])
 
     return (
       <div>

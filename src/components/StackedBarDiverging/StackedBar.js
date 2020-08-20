@@ -60,8 +60,8 @@ console.log(series)
     // const minValue = Math.min(...data.map(d => d.value))
 
     const xScale = this.xScale
-      .domain(d3.extent(series.flat(2)))
-      .rangeRound([margins.left, svgDimensions.width - margins.right])     
+    .domain(d3.extent(series.flat(2)))
+    .rangeRound([margins.left, svgDimensions.width - margins.right])     
     const yScale = this.yScale
       .padding(2 / 33)
       .domain(bias.map(([name]) => name))

@@ -52,7 +52,8 @@ function App() {
         <CircleBarDiverging />
         <StackedBarDiverging />  */}
         <StackedBarDivergingH /> 
-        {/* <GroupedBarChart />
+        <GroupedBarChart />
+        {/* 
         <BubbleBasic />
         <BubbleBasicColor />
         <MissingLineChart/>
