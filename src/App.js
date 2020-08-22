@@ -28,6 +28,9 @@ import AreaStackedChart from './components/AreaStackedChart/LineChart'
 import ScatterPlotBasic from './components/ScatterPlotBasic/LineChart'
 import ScatterPlotMultipleSeries from './components/ScatterPlotMultipleSeries/LineChart'
 import StackedBarDivergingH from './components/StackedBarDivergingH/StackedBar'
+import CircleBarStack from './components/CircleBarStack/CircleBar'
+import ChordChard from './components/ChordChart/ChordChart'
+
 
 function App() {
   return (
@@ -51,8 +54,8 @@ function App() {
         <CircleBarTitle />
         <CircleBarDiverging />
         <StackedBarDiverging />  */}
-        <StackedBarDivergingH /> 
-        <GroupedBarChart />
+        {/* <StackedBarDivergingH />  */}
+        {/* <GroupedBarChart /> */}
         {/* 
         <BubbleBasic />
         <BubbleBasicColor />
@@ -62,6 +65,9 @@ function App() {
         <AreaStackedChart/> */}
         {/* <ScatterPlotBasic/> */}
         {/* <ScatterPlotMultipleSeries/> */}
+        {/* <Map /> */}
+        {/* <CircleBarStack /> */}
+        <ChordChard/>
     </div>
   );
 }
