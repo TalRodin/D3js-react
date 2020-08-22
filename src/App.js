@@ -30,7 +30,7 @@ import ScatterPlotMultipleSeries from './components/ScatterPlotMultipleSeries/Li
 import StackedBarDivergingH from './components/StackedBarDivergingH/StackedBar'
 import CircleBarStack from './components/CircleBarStack/CircleBar'
 import ChordChard from './components/ChordChart/ChordChart'
-
+import ChordChardColor from './components/ChordChartColor/ChordChart'
 
 function App() {
   return (
@@ -67,7 +67,8 @@ function App() {
         {/* <ScatterPlotMultipleSeries/> */}
         {/* <Map /> */}
         {/* <CircleBarStack /> */}
-        <ChordChard/>
+        {/* <ChordChard/> */}
+        <ChordChardColor/>
     </div>
   );
 }
