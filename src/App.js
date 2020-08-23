@@ -31,6 +31,9 @@ import StackedBarDivergingH from './components/StackedBarDivergingH/StackedBar'
 import CircleBarStack from './components/CircleBarStack/CircleBar'
 import ChordChard from './components/ChordChart/ChordChart'
 import ChordChardColor from './components/ChordChartColor/ChordChart'
+import StreamGraph from './components/StreamGraph/LineChart'
+
+
 
 function App() {
   return (
@@ -68,7 +71,8 @@ function App() {
         {/* <Map /> */}
         {/* <CircleBarStack /> */}
         {/* <ChordChard/> */}
-        <ChordChardColor/>
+        {/* <ChordChardColor/> */}
+        <StreamGraph/>
     </div>
   );
 }
