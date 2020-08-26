@@ -34,11 +34,6 @@ export default class Line extends Component {
            
           />
            )}
-        
-       
-       
-      
-      
       </g>
     );
   }

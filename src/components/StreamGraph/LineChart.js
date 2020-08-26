@@ -10,17 +10,12 @@ import {timeFormat, timeParse} from "d3-time-format"
 class LineChart extends Component {
   constructor() {
     super()
-   
-     this.xScale = scaleLinear()
+      this.xScale = scaleLinear()
       this.yScale = scaleLinear()
     }
-   
-   
-   
     render() {
-        
-      let margins = {top: 20, right: 30, bottom: 30, left: 40}
-      const svgDimensions = { width: 850, height: 500}
+        let margins = {top: 20, right: 30, bottom: 30, left: 60}
+        const svgDimensions = { width: 460 - margins.left - margins.right, height: 400 - margins.top - margins.bottom}
         const max = d3.max(data, d => Math.abs(d.value))
         const min= d3.min(data, d => Math.abs(d.value))
        
@@ -49,7 +44,7 @@ class LineChart extends Component {
 
         return (
         <div>
-           <svg  viewBox={`0 0 ${svgDimensions.width} ${svgDimensions.width}`}>
+           <svg  width={svgDimensions.width + margins.left + margins.right} height={svgDimensions.height + margins.top + margins.bottom}>
               <Axes
                   scales={{ xScale, yScale }}
                   margins={margins}
