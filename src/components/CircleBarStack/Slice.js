@@ -23,7 +23,7 @@ class Slice extends React.Component {
       scales,
       ...props
     } = this.props;
-    console.log(data)
+
     let arc = d3
       .arc()
       .innerRadius(innerRadius)
@@ -36,7 +36,7 @@ class Slice extends React.Component {
     return (
       <g  {...props}>
         
-        <path d={arc(value)} fill={"#3e4b86"} />
+        <path d={arc(data)} fill={"#3e4b86"} />
       </g>
     );
   }

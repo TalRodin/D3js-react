@@ -27,29 +27,30 @@ class Circle extends Component {
             
     
     const stackedSeries = stackGen(data).map(d => (d.forEach(v => v.key = d.key), d))
-        const xScale = this.xScale
+
+    const xScale = this.xScale
             .align(0) 
             .domain( data.map(d => d.name))
             .range([0, 2 * Math.PI])
-
-        const yScale = this.yScale
-            .range([innerRadius * innerRadius, outerRadius * outerRadius])
-            .domain([0, d3.max(data, d => d.total)])
-
+    const yScale = this.yScale
+                  .domain([0, d3.max(data, d => d.total)])
+                  .range([innerRadius * innerRadius, outerRadius * outerRadius]);
+  
+    
         return (
           <div>
-            <svg  width={width} height={height} >
+            <svg  width={width} height={height} viewBox={`${-width / 2} ${-height / 2} ${width} ${height}`}>
               <CirleBar
                 width={width}
                 height={height}
                 scales={{ xScale, yScale }}
                 innerRadius={innerRadius}
-                // outerRadius={data.map(d => d.value)}
+     
                 cornerRadius={3}
                 padAngle={0.01}
-                // startAngle={data.map(d => d.name)}
+    
                 padRadius={innerRadius}
-                // endAngle={data.map(d=>xScale(d.name) + xScale.bandwidth())}
+           
                 data={stackedSeries} />
             </svg>
           </div> 

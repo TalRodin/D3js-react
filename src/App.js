@@ -32,17 +32,25 @@ import CircleBarStack from './components/CircleBarStack/CircleBar'
 import ChordChard from './components/ChordChart/ChordChart'
 import ChordChardColor from './components/ChordChartColor/ChordChart'
 import StreamGraph from './components/StreamGraph/LineChart'
-
-
+import RidgeChart from './components/RidgeChart/LineChart'
+import BarChartHTitles from './components/BarChartHTitles/BarChart'
+import BarChartVTitles from './components/BarChartVTitles/BarChart'
 
 function App() {
   return (
     <div >
-        {/* <BarChartH />
-        <BarChartV />
+        {/* <BarChartH /> */}
+        <BarChartHTitles />
+        {/* <BarChartVTitles /> */}
+        {/* <LineBarChart /> */}
+        {/* <BarChartV />
         <BarChartHdiverging />
         <BarChartVdiverging />
-        <PieChart />
+        <StackedBar />
+        <StackedBarV />
+        <StackedBarDiverging /> 
+        <StackedBarDivergingH /> */}
+        {/* <PieChart />
         <PieChartWhole />
         <LineChartM />
         <LineChartY />
@@ -51,28 +59,26 @@ function App() {
         <LineChartDouble />
         <AreaChart />
         <LineBarChart />
-        <StackedBar />
-        <StackedBarV />
+   
         <CircleBar />
         <CircleBarTitle />
         <CircleBarDiverging />
-        <StackedBarDiverging />  */}
-        {/* <StackedBarDivergingH />  */}
-        {/* <GroupedBarChart /> */}
-        {/* 
-        <BubbleBasic />
-        <BubbleBasicColor />
-        <MissingLineChart/>
-        <MissingAreaChart />
-        <AreaLineChart />
-        <AreaStackedChart/> */}
+          */}
+        
+        {/* <BubbleBasic /> */}
+        {/* <BubbleBasicColor /> */}
+        {/* <MissingLineChart/> */}
+        {/* <MissingAreaChart /> */}
+        {/* <AreaLineChart /> */}
+        {/* <AreaStackedChart/> */}
         {/* <ScatterPlotBasic/> */}
         {/* <ScatterPlotMultipleSeries/> */}
-        {/* <Map /> */}
-        {/* <CircleBarStack /> */}
         {/* <ChordChard/> */}
         {/* <ChordChardColor/> */}
-        <StreamGraph/>
+        {/* <StreamGraph/> */}
+        {/* <CircleBarStack /> */}
+        {/* <GroupedBarChart /> */}
+        {/* <RidgeChart /> */}
     </div>
   );
 }

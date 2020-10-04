@@ -1,33 +1,28 @@
 import React from 'react'
 import Axis from './Axis'
-import * as d3 from 'd3';
+
 export default ({ scales, margins, svgDimensions }) => {
     const { height, width } = svgDimensions
   
     const xProps = {
       orient: 'Bottom',
       scale: scales.xScale,
-      translate: `translate(0," + ${height} + ")"`,
-      
+      translate: `translate(0, ${height - margins.bottom})`,
+      tickSize: 4
     }
   
     const yProps = {
       orient: 'Left',
       scale: scales.yScale,
+      translate: `translate(${margins.left}, 0)`,
+      tickSize: 4
      
-    }
-    const yPropsName = {
-      orient: 'Left',
-      scale: scales.yName,
-  
     }
     return (
 
       <g>
         <Axis {...xProps} />
-        <Axis {...yProps} >
-        </Axis>
-        {/* <Axis {...yPropsName}/> */}
+        <Axis {...yProps} />
       </g>
-  )
-}
+    )
+  }

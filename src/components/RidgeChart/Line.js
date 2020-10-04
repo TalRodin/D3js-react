@@ -21,7 +21,7 @@ export default class Line extends Component {
     .curve(d3.curveLinear);
     
     return (
-      <g  {...props}>
+      <g  transform={"translate(" + margins.left + "," + margins.top + ")"}>
         <path
           d={area(data)}
           fill={'steelblue'}
@@ -30,8 +30,6 @@ export default class Line extends Component {
           stroke-linejoin={'round'}
           stroke-linecap={'round'}
         />
-      
-      
       </g>
     );
   }
