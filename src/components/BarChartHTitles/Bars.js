@@ -43,12 +43,28 @@ export default class Bars extends Component {
        
         )
       )
-      
+      const titles = (
+        data.map(datum =>
+         <text 
+         font-family="sans-serif" 
+         fill="#414141"
+         font-size="7"
+         text-anchor="end"
+         dy="-1em"
+         dx="1.6em"
+         x={xScale(datum.name) + xScale.bandwidth() / 2}
+         y={yScale(datum.value)}
+         >
+           {(datum.value*100).toFixed(2)+'%'}
+         </text> 
+        
+        )
+        )
       
       return (
         <g onMouseOver={this.onMouseOver} onMouseOut={this.onMouseOut}  {...props}>
           {bars}
-          
+          {titles}
         </g>
       )
     }
