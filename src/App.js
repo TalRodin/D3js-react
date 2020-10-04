@@ -39,8 +39,9 @@ import BarChartVTitles from './components/BarChartVTitles/BarChart'
 function App() {
   return (
     <div >
+      <GroupedBarChart />
         {/* <BarChartH /> */}
-        <BarChartHTitles />
+        {/* <BarChartHTitles /> */}
         {/* <BarChartVTitles /> */}
         {/* <LineBarChart /> */}
         {/* <BarChartV />
