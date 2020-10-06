@@ -36,11 +36,13 @@ import RidgeChart from './components/RidgeChart/LineChart'
 import BarChartHTitles from './components/BarChartHTitles/BarChart'
 import BarChartVTitles from './components/BarChartVTitles/BarChart'
 import HeatmapChart from './components/HeatMap/HeatmapChart'
+import PieChartLabels from './components/PieChartLabels/PieChart'
 
 function App() {
   return (
     <div >
-      <HeatmapChart/>
+      <PieChartLabels/>
+      {/* <HeatmapChart/> */}
         {/* <GroupedBarChart /> */}
         {/* <BarChartH /> */}
         {/* <BarChartHTitles /> */}
