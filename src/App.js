@@ -35,11 +35,13 @@ import StreamGraph from './components/StreamGraph/LineChart'
 import RidgeChart from './components/RidgeChart/LineChart'
 import BarChartHTitles from './components/BarChartHTitles/BarChart'
 import BarChartVTitles from './components/BarChartVTitles/BarChart'
+import HeatmapChart from './components/HeatMap/HeatmapChart'
 
 function App() {
   return (
     <div >
-      <GroupedBarChart />
+      <HeatmapChart/>
+        {/* <GroupedBarChart /> */}
         {/* <BarChartH /> */}
         {/* <BarChartHTitles /> */}
         {/* <BarChartVTitles /> */}
@@ -78,7 +80,6 @@ function App() {
         {/* <ChordChardColor/> */}
         {/* <StreamGraph/> */}
         {/* <CircleBarStack /> */}
-        {/* <GroupedBarChart /> */}
         {/* <RidgeChart /> */}
     </div>
   );
