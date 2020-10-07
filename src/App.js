@@ -38,11 +38,13 @@ import BarChartVTitles from './components/BarChartVTitles/BarChart'
 import HeatmapChart from './components/HeatMap/HeatmapChart'
 import PieChartLabels from './components/PieChartLabels/PieChart'
 import PieChartTooltip from './components/PieChartTooltip/PieChart'
+import LineChartConfidenceint from'./components/LineChartConfidenceinterv/LineChart'
 
 function App() {
   return (
     <div >
-      <PieChartTooltip/>
+       <LineChartConfidenceint/>
+      {/* <PieChartTooltip/> */}
       {/* <PieChartLabels/> */}
       {/* <HeatmapChart/> */}
         {/* <GroupedBarChart /> */}
