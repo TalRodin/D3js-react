@@ -37,11 +37,13 @@ import BarChartHTitles from './components/BarChartHTitles/BarChart'
 import BarChartVTitles from './components/BarChartVTitles/BarChart'
 import HeatmapChart from './components/HeatMap/HeatmapChart'
 import PieChartLabels from './components/PieChartLabels/PieChart'
+import PieChartTooltip from './components/PieChartTooltip/PieChart'
 
 function App() {
   return (
     <div >
-      <PieChartLabels/>
+      <PieChartTooltip/>
+      {/* <PieChartLabels/> */}
       {/* <HeatmapChart/> */}
         {/* <GroupedBarChart /> */}
         {/* <BarChartH /> */}
