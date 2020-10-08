@@ -39,11 +39,14 @@ import HeatmapChart from './components/HeatMap/HeatmapChart'
 import PieChartLabels from './components/PieChartLabels/PieChart'
 import PieChartTooltip from './components/PieChartTooltip/PieChart'
 import LineChartConfidenceint from'./components/LineChartConfidenceinterv/LineChart'
+import Lollipop from './components/Lollipop/BubbleChart'
+
 
 function App() {
   return (
     <div >
-       <LineChartConfidenceint/>
+      <Lollipop/>
+       {/* <LineChartConfidenceint/> */}
       {/* <PieChartTooltip/> */}
       {/* <PieChartLabels/> */}
       {/* <HeatmapChart/> */}
