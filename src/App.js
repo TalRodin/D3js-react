@@ -41,11 +41,13 @@ import PieChartTooltip from './components/PieChartTooltip/PieChart'
 import LineChartConfidenceint from'./components/LineChartConfidenceinterv/LineChart'
 import Lollipop from './components/Lollipop/BubbleChart'
 import LollipopV from './components/LollipopV/BubbleChart'
+import LollipopCleveland from './components/LollipopCleveland/BubbleChart'
 
 function App() {
   return (
     <div >
-      <LollipopV/>
+      <LollipopCleveland/>
+      {/* <LollipopV/> */}
       {/* <Lollipop/> */}
        {/* <LineChartConfidenceint/> */}
       {/* <PieChartTooltip/> */}
