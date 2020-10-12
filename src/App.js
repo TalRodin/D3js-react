@@ -44,11 +44,13 @@ import LollipopV from './components/LollipopV/BubbleChart'
 import LollipopCleveland from './components/LollipopCleveland/BubbleChart'
 import ChordChardTitles from './components/ChordChartTitles/ChordChart'
 import ArcDiagram from './components/ArcDiagram/BubbleChart'
+import ArcDiagramVert from './components/ArcDiagramVert/BubbleChart'
 
 function App() {
   return (
     <div >
-      <ArcDiagram/>
+      <ArcDiagramVert/>
+      {/* <ArcDiagram/> */}
       {/* <ChordChardTitles/> */}
       {/* <LollipopCleveland/> */}
       {/* <LollipopV/> */}
