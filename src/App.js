@@ -42,11 +42,15 @@ import LineChartConfidenceint from'./components/LineChartConfidenceinterv/LineCh
 import Lollipop from './components/Lollipop/BubbleChart'
 import LollipopV from './components/LollipopV/BubbleChart'
 import LollipopCleveland from './components/LollipopCleveland/BubbleChart'
+import ChordChardTitles from './components/ChordChartTitles/ChordChart'
+import ArcDiagram from './components/ArcDiagram/BubbleChart'
 
 function App() {
   return (
     <div >
-      <LollipopCleveland/>
+      <ArcDiagram/>
+      {/* <ChordChardTitles/> */}
+      {/* <LollipopCleveland/> */}
       {/* <LollipopV/> */}
       {/* <Lollipop/> */}
        {/* <LineChartConfidenceint/> */}
