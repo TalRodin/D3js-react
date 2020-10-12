@@ -45,20 +45,22 @@ import LollipopCleveland from './components/LollipopCleveland/BubbleChart'
 import ChordChardTitles from './components/ChordChartTitles/ChordChart'
 import ArcDiagram from './components/ArcDiagram/BubbleChart'
 import ArcDiagramVert from './components/ArcDiagramVert/BubbleChart'
+import Hexbin from './components/HexbinChart/BubbleChart'
 
 function App() {
   return (
     <div >
-      <ArcDiagramVert/>
-      {/* <ArcDiagram/> */}
-      {/* <ChordChardTitles/> */}
-      {/* <LollipopCleveland/> */}
-      {/* <LollipopV/> */}
-      {/* <Lollipop/> */}
-       {/* <LineChartConfidenceint/> */}
-      {/* <PieChartTooltip/> */}
-      {/* <PieChartLabels/> */}
-      {/* <HeatmapChart/> */}
+      <Hexbin/>
+        {/* <ArcDiagramVert/> */}
+        {/* <ArcDiagram/> */}
+        {/* <ChordChardTitles/> */}
+        {/* <LollipopCleveland/> */}
+        {/* <LollipopV/> */}
+        {/* <Lollipop/> */}
+        {/* <LineChartConfidenceint/> */}
+        {/* <PieChartTooltip/> */}
+        {/* <PieChartLabels/> */}
+        {/* <HeatmapChart/> */}
         {/* <GroupedBarChart /> */}
         {/* <BarChartH /> */}
         {/* <BarChartHTitles /> */}
