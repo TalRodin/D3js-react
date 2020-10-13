@@ -46,11 +46,12 @@ import ChordChardTitles from './components/ChordChartTitles/ChordChart'
 import ArcDiagram from './components/ArcDiagram/BubbleChart'
 import ArcDiagramVert from './components/ArcDiagramVert/BubbleChart'
 import Hexbin from './components/HexbinChart/BubbleChart'
-
+import Density2d from './components/Density2d/BubbleChart'
 function App() {
   return (
     <div >
-      <Hexbin/>
+      <Density2d/>
+      {/* <Hexbin/> */}
         {/* <ArcDiagramVert/> */}
         {/* <ArcDiagram/> */}
         {/* <ChordChardTitles/> */}
