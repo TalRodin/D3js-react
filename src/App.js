@@ -47,10 +47,15 @@ import ArcDiagram from './components/ArcDiagram/BubbleChart'
 import ArcDiagramVert from './components/ArcDiagramVert/BubbleChart'
 import Hexbin from './components/HexbinChart/BubbleChart'
 import Density2d from './components/Density2d/BubbleChart'
+import BasicCounter from './components/BasicCounter/BubbleChart'
+
+
+
 function App() {
   return (
     <div >
-      <Density2d/>
+      <BasicCounter/>
+      {/* <Density2d/> */}
       {/* <Hexbin/> */}
         {/* <ArcDiagramVert/> */}
         {/* <ArcDiagram/> */}
