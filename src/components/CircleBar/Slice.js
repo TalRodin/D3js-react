@@ -1,28 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import * as d3 from 'd3';
-import { svg } from 'd3';
 
-class Slice extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    let {
-      value,
-      label,
-      fill,
-      innerRadius,
-      outerRadius,
-      cornerRadius,
-      startAngle,
-      padAngle,
-      endAngle,
-      data,
-      padradius,
-      ...props
-    } = this.props;
-
+function Slice({value, innerRadius, outerRadius, cornerRadius,startAngle,padAngle,endAngle}){
     let arc = d3
       .arc()
       .innerRadius(innerRadius)
@@ -31,14 +10,13 @@ class Slice extends React.Component {
       .startAngle(startAngle)
       .endAngle(endAngle)
       .padRadius(innerRadius)
+      .cornerRadius(cornerRadius)
     
     return (
-      <g  {...props}>
-        
-        <path d={arc(value)} fill={"#3e4b86"} />
+      <g>
+        <path d={arc(value)} fill={"#0166d6"} />
       </g>
     );
   }
-}
 
 export default Slice;

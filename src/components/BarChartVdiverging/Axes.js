@@ -1,7 +1,7 @@
 import React from 'react'
 import Axisx from './Axisx'
 import Axisy from './Axisy'
-import { select as d3Select } from 'd3-selection'
+
 export default ({ scales, margins, data }) => {
    
     const xProps = {

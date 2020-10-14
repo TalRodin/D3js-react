@@ -19,7 +19,6 @@ function Axis({scale,orient,tickSize,translate,data}){
       d3Select(axisElement).call(axis)
       
     }
-
       return (
         <g
           className={`Axis Axis-${orient}`}
