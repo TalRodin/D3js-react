@@ -2,12 +2,12 @@ import React from 'react'
 import Axis from './Axis'
 
 export default ({ scales, margins, svgDimensions }) => {
-    const { height, width } = svgDimensions
+    const { height} = svgDimensions
   
     const xProps = {
       orient: 'Bottom',
       scale: scales.xScale,
-      translate: `translate(0,${height/2 - margins.bottom})`,
+      translate: `translate(0,${scales.yScale(0)})`,
       tickSize: 4
     }
   

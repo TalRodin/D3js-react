@@ -54,9 +54,10 @@ import BasicCounter from './components/BasicCounter/BubbleChart'
 function App() {
   return (
     <div >
+      <BarChartHdiverging />
       {/* <BarChartHTitles /> */}
-      <BarChartVTitles />
-
+      {/* <BarChartVTitles /> */}
+      {/* <BarChartH /> */}
       {/* <BarChartH /> */}
       {/* <BasicCounter/> */}
       {/* <Density2d/> */}
@@ -74,7 +75,7 @@ function App() {
         {/* <GroupedBarChart /> */}
         {/* <LineBarChart /> */}
         {/* <BarChartV />
-        <BarChartHdiverging />
+        
         <BarChartVdiverging />
         <StackedBar />
         <StackedBarV />
