@@ -1,22 +1,10 @@
-import React, { Component } from 'react'
-import { scaleLinear } from 'd3-scale'
-import { interpolateLab } from 'd3-interpolate'
-import {schemeSet1} from 'd3-scale-chromatic'
+import React from 'react'
+import {schemeCategory10} from 'd3-scale-chromatic'
 import * as d3 from 'd3';
 
-export default class Bars extends Component {
-    constructor(props) {
-      super(props)
-      this.colorScale = scaleLinear()
-        .domain([this.props.minValue, this.props.maxValue])
-        .range(['#b3e5fc', '#01579b'])
-        .interpolate(interpolateLab)
-    }
-    render() {
-      const { scales, margins, data, svgDimensions, ...props } = this.props
+function Bars({scales,data}){
       const { xScale, yScale } = scales
-      const { height } = svgDimensions
-  
+
       const bars = (
         data.map(datum =>
           <g>
@@ -26,7 +14,7 @@ export default class Bars extends Component {
             y={yScale(datum.name)}
             height={yScale.bandwidth()}
             width={Math.abs(xScale(datum.value) - xScale(0))}
-            fill={schemeSet1[datum.value > 0 ? 1 : 0]}
+            fill={schemeCategory10[datum.value > 0 ? 0 : 3]}
           >
           </rect>
             <text 
@@ -48,4 +36,4 @@ export default class Bars extends Component {
         </>
       )
     }
-}
+export default Bars

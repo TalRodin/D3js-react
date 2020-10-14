@@ -1,35 +1,31 @@
-import React, { Component } from 'react'
+import React, { useRef, useEffect } from 'react'
 import * as d3Axis from 'd3-axis'
 import { select as d3Select } from 'd3-selection'
 
 
 
-export default class Axis extends Component {
-    componentDidMount() {
-      this.renderAxis()
+function Axis({scale,orient,tickSize,translate}){
+    let axisElement = useRef(null)
+
+    useEffect(() => {
+      renderAxis()
+    }, []);
+
+    const renderAxis=()=>{
+      const axis= d3Axis[`axis${orient}`]()
+        .scale(scale)
+        .tickSize(tickSize)
+        .tickPadding([4])
+      d3Select(axisElement).call(axis)
+      d3Select('.domain').remove(axis)
     }
-    componentDidUpdate() {
-      this.renderAxis()
-    }
-    renderAxis() {
-      console.log(this.props.orient)
-      const axisType = `axis${this.props.orient}`
-      // const axisl= d3Axis[axisType]()
-      const axisl= d3Axis[`axisTop`]()
-        .scale(this.props.scale)
-        .tickSize(this.props.tickSize)
-        .tickPadding([6])
-        
-      d3Select(this.axisElement).call(axisl)
-    }
-    render() {
       return (
         <g
-          className={`Axis Axis-${this.props.orient}`}
-          ref={(el) => { this.axisElement = el; }}
-          transform={this.props.translate}
+          className={`Axis Axis-${orient}`}
+          ref={(el) => { axisElement = el; }}
+          transform={translate}
         >
         </g>
       )
     }
-  }
+export default Axis

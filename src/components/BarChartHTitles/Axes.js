@@ -2,7 +2,7 @@ import React from 'react'
 import Axis from './Axis'
 
 export default ({ scales, margins, svgDimensions }) => {
-    const { height, width } = svgDimensions
+    const { height} = svgDimensions
   
     const xProps = {
       orient: 'Bottom',
@@ -16,7 +16,6 @@ export default ({ scales, margins, svgDimensions }) => {
       scale: scales.yScale,
       translate: `translate(${margins.left}, 0)`,
       tickSize: 4
-     
     }
     return (
 
