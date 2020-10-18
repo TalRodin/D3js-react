@@ -48,7 +48,7 @@ import ArcDiagramVert from './components/ArcDiagramVert/BubbleChart'
 import Hexbin from './components/HexbinChart/BubbleChart'
 import Density2d from './components/Density2d/BubbleChart'
 import BasicCounter from './components/BasicCounter/BubbleChart'
-
+import RidgeChartColor from './components/RidgeChartColor/LineChart'
 
 
 function App() {
@@ -60,8 +60,8 @@ function App() {
         {/* <BarChartVTitles /> */}
         {/* <CircleBar /> */}
         {/* <CircleBarStack /> */}
-<RidgeChart />
-
+        {/* <RidgeChart /> */}
+        <RidgeChartColor/>
         {/* <BarChartH /> */}
         {/* <BarChartH /> */}
         {/* <BasicCounter/> */}
