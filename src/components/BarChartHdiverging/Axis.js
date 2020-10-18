@@ -9,11 +9,11 @@ function Axis({orient,tickSize,translate,scale}){
     }, [])
     const renderAxis=()=>{
       const axisType = `axis${orient}`
-      const axisl = d3Axis[axisType]()
+      const axis = d3Axis[axisType]()
         .scale(scale)
         .tickSize(tickSize)
         .tickPadding([6])
-      d3Select(axisElement).call(axisl)
+      d3Select(axisElement).call(axis)
     }
       return (
         <g

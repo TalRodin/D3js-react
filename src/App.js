@@ -54,17 +54,19 @@ import BasicCounter from './components/BasicCounter/BubbleChart'
 function App() {
   return (
     <div >
-      {/* <BarChartVdiverging /> */}
-      {/* <BarChartHdiverging /> */}
-      {/* <BarChartHTitles /> */}
-      {/* <BarChartVTitles /> */}
-      <CircleBar />
+        {/* <BarChartVdiverging /> */}
+        {/* <BarChartHdiverging /> */}
+        {/* <BarChartHTitles /> */}
+        {/* <BarChartVTitles /> */}
+        {/* <CircleBar /> */}
+        {/* <CircleBarStack /> */}
+<RidgeChart />
 
-      {/* <BarChartH /> */}
-      {/* <BarChartH /> */}
-      {/* <BasicCounter/> */}
-      {/* <Density2d/> */}
-      {/* <Hexbin/> */}
+        {/* <BarChartH /> */}
+        {/* <BarChartH /> */}
+        {/* <BasicCounter/> */}
+        {/* <Density2d/> */}
+        {/* <Hexbin/> */}
         {/* <ArcDiagramVert/> */}
         {/* <ArcDiagram/> */}
         {/* <ChordChardTitles/> */}
@@ -108,8 +110,8 @@ function App() {
         {/* <ChordChard/> */}
         {/* <ChordChardColor/> */}
         {/* <StreamGraph/> */}
-        {/* <CircleBarStack /> */}
-        {/* <RidgeChart /> */}
+
+        
     </div>
   );
 }

@@ -1,9 +1,8 @@
 import React from 'react'
 import Axis from './Axis'
 
-export default ({ scales, margins, svgDimensions }) => {
-    const { height} = svgDimensions
-  
+export default ({ scales, margins}) => {
+
     const xProps = {
       orient: 'Bottom',
       scale: scales.xScale,

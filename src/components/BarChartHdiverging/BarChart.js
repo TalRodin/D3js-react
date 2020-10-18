@@ -17,7 +17,7 @@ function BarChart(){
       .range([margins.left, svgDimensions.width - margins.right])
 
     const yScale = scaleLinear()
-      .domain([minValue, maxValue])
+      .domain([minValue,maxValue])
       .range([margins.top,svgDimensions.height - margins.bottom])
 
     

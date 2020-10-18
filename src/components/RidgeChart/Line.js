@@ -10,27 +10,29 @@ export default class Line extends Component {
   }
   render() {
     const { scales, margins, data, svgDimensions, ...props } = this.props;
-    const { xScale, yScale } = scales;
+    const { xScale, yScale,yName } = scales;
     const { height, width } = svgDimensions;
 
     
-    let area =d3.area()
-    .x(d => xScale(d.date))
-    .y0(yScale(0))
-    .y1(d => yScale(d.value))
-    .curve(d3.curveLinear);
+    let line =d3.line()
+          .curve(d3.curveBasis)
+          .x(function(d) { return xScale(d[0]); })
+          .y(function(d) { return yScale(d[1]); })
     
+    console.log(data)
     return (
-      <g  transform={"translate(" + margins.left + "," + margins.top + ")"}>
-        <path
-          d={area(data)}
-          fill={'steelblue'}
-          stroke={'steelblue'}
-          stroke-width={'1.5'}
-          stroke-linejoin={'round'}
-          stroke-linecap={'round'}
-        />
+      data.map(d=>
+      <g  transform={"translate(0," + (yName(d.key)-height) +")"}>
+            <path
+            d={line(d.density)}
+            fill={'#69b3a2'}
+            stroke={"#000"}
+            strokeWidth={'1'}
+            strokeLinejoin={'round'}
+            strokeLinecap={'round'}
+          />
       </g>
+      )
     );
   }
 }

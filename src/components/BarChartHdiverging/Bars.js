@@ -11,8 +11,7 @@ function Bars({scales, data}) {
             y={yScale(Math.min(0, datum.value))}
             height={Math.abs(yScale(datum.value) - yScale(0))}
             width={xScale.bandwidth()}
-            fill={schemeCategory10[datum.value > 0 ? 0 : 3]}
-          />
+            fill={schemeCategory10[datum.value > 0 ? 0 : 3]}/>
         )
       )
       return (
