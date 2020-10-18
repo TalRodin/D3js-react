@@ -49,19 +49,20 @@ import Hexbin from './components/HexbinChart/BubbleChart'
 import Density2d from './components/Density2d/BubbleChart'
 import BasicCounter from './components/BasicCounter/BubbleChart'
 import RidgeChartColor from './components/RidgeChartColor/LineChart'
-
+import LineChartInlineLabels from './components/LineChartInlineLabels/LineChart'
 
 function App() {
   return (
     <div >
+      <LineChartInlineLabels/>
         {/* <BarChartVdiverging /> */}
         {/* <BarChartHdiverging /> */}
         {/* <BarChartHTitles /> */}
         {/* <BarChartVTitles /> */}
         {/* <CircleBar /> */}
         {/* <CircleBarStack /> */}
-        {/* <RidgeChart /> */}
-        <RidgeChartColor/>
+        {/* <RidgeChart />
+        <RidgeChartColor/> */}
         {/* <BarChartH /> */}
         {/* <BarChartH /> */}
         {/* <BasicCounter/> */}
