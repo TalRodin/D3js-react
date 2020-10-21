@@ -51,12 +51,12 @@ import BasicCounter from './components/BasicCounter/BubbleChart'
 import RidgeChartColor from './components/RidgeChartColor/LineChart'
 import LineChartInlineLabels from './components/LineChartInlineLabels/LineChart'
 import Dendrogram from './components/Dendrogram/BubbleChart'
-
-
+import RadialDendrogram from './components/RadialDendrogram/BubbleChart'
 
 function App() {
   return (
     <div >
+      <RadialDendrogram/>
        <Dendrogram/>
       {/* <LineChartInlineLabels/> */}
         {/* <BarChartVdiverging /> */}
