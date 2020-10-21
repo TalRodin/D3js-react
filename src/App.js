@@ -50,11 +50,15 @@ import Density2d from './components/Density2d/BubbleChart'
 import BasicCounter from './components/BasicCounter/BubbleChart'
 import RidgeChartColor from './components/RidgeChartColor/LineChart'
 import LineChartInlineLabels from './components/LineChartInlineLabels/LineChart'
+import Dendrogram from './components/Dendrogram/BubbleChart'
+
+
 
 function App() {
   return (
     <div >
-      <LineChartInlineLabels/>
+       <Dendrogram/>
+      {/* <LineChartInlineLabels/> */}
         {/* <BarChartVdiverging /> */}
         {/* <BarChartHdiverging /> */}
         {/* <BarChartHTitles /> */}
