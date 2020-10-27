@@ -52,16 +52,20 @@ import RidgeChartColor from './components/RidgeChartColor/LineChart'
 import LineChartInlineLabels from './components/LineChartInlineLabels/LineChart'
 import Dendrogram from './components/Dendrogram/BubbleChart'
 import RadialDendrogram from './components/RadialDendrogram/BubbleChart'
+import BarChartHTitlesMouse from './components/BarChartHTitlesMouse/BarChart'
+
 
 function App() {
   return (
     <div >
-      <RadialDendrogram/>
-       <Dendrogram/>
+      <BarChartHTitlesMouse/>
+       {/* <BarChartHTitles /> */}
+      {/* <RadialDendrogram/>
+       <Dendrogram/> */}
       {/* <LineChartInlineLabels/> */}
         {/* <BarChartVdiverging /> */}
         {/* <BarChartHdiverging /> */}
-        {/* <BarChartHTitles /> */}
+       
         {/* <BarChartVTitles /> */}
         {/* <CircleBar /> */}
         {/* <CircleBarStack /> */}
@@ -85,8 +89,6 @@ function App() {
         {/* <GroupedBarChart /> */}
         {/* <LineBarChart /> */}
         {/* <BarChartV />
-        
-        
         <StackedBar />
         <StackedBarV />
         <StackedBarDiverging /> 
@@ -100,7 +102,6 @@ function App() {
         <LineChartDouble />
         <AreaChart />
         <LineBarChart />
-        
         <CircleBarTitle />
         <CircleBarDiverging />
           */}
@@ -115,8 +116,6 @@ function App() {
         {/* <ChordChard/> */}
         {/* <ChordChardColor/> */}
         {/* <StreamGraph/> */}
-
-        
     </div>
   );
 }

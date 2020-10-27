@@ -31,6 +31,5 @@ export default class Bubble extends Component {
 <g >{bubble}</g>
       )
           
-    }
-  
+      }
 }
