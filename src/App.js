@@ -53,16 +53,19 @@ import LineChartInlineLabels from './components/LineChartInlineLabels/LineChart'
 import Dendrogram from './components/Dendrogram/BubbleChart'
 import RadialDendrogram from './components/RadialDendrogram/BubbleChart'
 import BarChartHTitlesMouse from './components/BarChartHTitlesMouse/BarChart'
+import BarChartVTitlesMouse from './components/BarChartVTitlesMouse/BarChart'
 
 
 function App() {
   return (
     <div >
-      <BarChartHTitlesMouse/>
+      {/* <BarChartHTitlesMouse/> */}
+      {/* <BarChartVTitles />  */}
+      <BarChartVTitlesMouse/>
        {/* <BarChartHTitles /> */}
       {/* <RadialDendrogram/>
        <Dendrogram/> */}
-      {/* <LineChartInlineLabels/> */}
+        {/* <LineChartInlineLabels/> */}
         {/* <BarChartVdiverging /> */}
         {/* <BarChartHdiverging /> */}
        

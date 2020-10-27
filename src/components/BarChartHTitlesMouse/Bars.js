@@ -7,13 +7,13 @@ function Bars({scales, data}){
       const bars = (
         data.map(datum =>
           <rect
+            className='barH'
             key={datum.name}
             x={xScale(datum.name)}  
             y={yScale(datum.value)}
             height={yScale(0) - yScale(datum.value)}
             width={xScale.bandwidth()}
             fill={'#5371f9'}
-
             />
           )
         )
