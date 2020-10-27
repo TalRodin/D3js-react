@@ -55,17 +55,19 @@ import RadialDendrogram from './components/RadialDendrogram/BubbleChart'
 import BarChartHTitlesMouse from './components/BarChartHTitlesMouse/BarChart'
 import BarChartVTitlesMouse from './components/BarChartVTitlesMouse/BarChart'
 import BarChartVdivergingNoValues from './components/BarChartVdivergingNoValues/BarChart'
+import BarChartVdivergingMouse from './components/BarChartVdivergingMouse/BarChart'
 
 
 function App() {
   return (
     <div >
+      <BarChartVdivergingMouse/>
       {/* <BarChartHTitlesMouse/> */}
       {/* <BarChartVTitles />  */}
       {/* <BarChartVTitlesMouse/> */}
       {/* <BarChartHTitles /> */}
       {/* <BarChartVdiverging /> */}
-      <BarChartVdivergingNoValues/>
+      {/* <BarChartVdivergingNoValues/> */}
       {/* <BarChartHdiverging /> */}
 
 
