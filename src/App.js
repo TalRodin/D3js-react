@@ -54,6 +54,7 @@ import Dendrogram from './components/Dendrogram/BubbleChart'
 import RadialDendrogram from './components/RadialDendrogram/BubbleChart'
 import BarChartHTitlesMouse from './components/BarChartHTitlesMouse/BarChart'
 import BarChartVTitlesMouse from './components/BarChartVTitlesMouse/BarChart'
+import BarChartVdivergingNoValues from './components/BarChartVdivergingNoValues/BarChart'
 
 
 function App() {
@@ -61,16 +62,25 @@ function App() {
     <div >
       {/* <BarChartHTitlesMouse/> */}
       {/* <BarChartVTitles />  */}
-      <BarChartVTitlesMouse/>
-       {/* <BarChartHTitles /> */}
+      {/* <BarChartVTitlesMouse/> */}
+      {/* <BarChartHTitles /> */}
+      {/* <BarChartVdiverging /> */}
+      <BarChartVdivergingNoValues/>
+      {/* <BarChartHdiverging /> */}
+
+
+
+
+
+
+      {/* <CircleBar /> */}
+
       {/* <RadialDendrogram/>
        <Dendrogram/> */}
         {/* <LineChartInlineLabels/> */}
-        {/* <BarChartVdiverging /> */}
-        {/* <BarChartHdiverging /> */}
-       
-        {/* <BarChartVTitles /> */}
-        {/* <CircleBar /> */}
+        
+
+        
         {/* <CircleBarStack /> */}
         {/* <RidgeChart />
         <RidgeChartColor/> */}
