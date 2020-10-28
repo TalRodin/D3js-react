@@ -1,20 +1,14 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import { scaleBand, scaleLinear } from 'd3-scale'
 import Axes from './Axes'
 import data from './data/data'
 import Bars from './Bars'
 import Tooltip from './Tooltip';
 
-class BarChart extends Component {
-  constructor() {
-    super()
-    this.xScale = scaleBand()
-    this.yScale = scaleLinear()
-    this.state = {
-      hoveredBar: null,
-    };
-  }
-  render() {
+function BarChart(){
+
+    const [hoveredBar,setHover]=useState(null)
+
     const margins = { top: 30, right: 0, bottom: 30, left: 40 }
     const svgDimensions = {
       width: 800,
@@ -22,13 +16,12 @@ class BarChart extends Component {
     }
 
     const maxValue = Math.max(...data.map(d => d.value))
-    // const minValue = Math.min(...data.map(d => d.value))
- 
-    const xScale = this.xScale
+
+    const xScale = scaleBand()
       .padding(0.1)
       .domain(data.map(d => d.name))
       .range([margins.left, svgDimensions.width - margins.right])
-    const yScale = this.yScale
+    const yScale = scaleLinear()
       .domain([0, maxValue])
       .range([svgDimensions.height - margins.bottom ,margins.top])
 
@@ -54,20 +47,20 @@ class BarChart extends Component {
           data={data}
           maxValue={maxValue}
           svgDimensions={svgDimensions}
-          onMouseOverCallback={(datum) => this.setState({ hoveredBar: datum })}
-          onMouseOutCallback={() => this.setState({ hoveredBar: null })}
+          onMouseOverCallback={(datum) => setHover(datum)}
+          onMouseOutCallback={() => setHover(null)}
           
         />
          
       </svg>
-      {this.state.hoveredBar ? (
+      {hoveredBar ? (
           <Tooltip
-            data={this.state.hoveredBar}
+            data={hoveredBar}
             scales={{ xScale, yScale }}
           />
         ) : null}
       </div>
     )
   }
-}
+
 export default BarChart

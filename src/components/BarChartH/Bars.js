@@ -22,7 +22,7 @@ export default class Bars extends Component {
     }
     render() {
       console.log('>>>>>>',this)
-      const { scales, margins, data, svgDimensions, ...props } = this.props
+      const { scales, margins, data, svgDimensions, ...props} = this.props
       const { xScale, yScale } = scales
       const { height } = svgDimensions
      
