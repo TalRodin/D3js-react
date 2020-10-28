@@ -58,6 +58,7 @@ import BarChartVdivergingNoValues from './components/BarChartVdivergingNoValues/
 import BarChartVdivergingMouse from './components/BarChartVdivergingMouse/BarChart'
 import BarChartVdivergingTooltip from './components/BarChartVdivergingTooltip/BarChart'
 import CircleBarColor from './components/CircleBarColor/CircleBar'
+import CircleBarSize from './components/CircleBarSize/CircleBar'
 
 
 function App() {
@@ -72,9 +73,10 @@ function App() {
       {/* <BarChartVdivergingNoValues/> */}
       {/* <BarChartHdiverging /> */}
       {/* <BarChartVdivergingTooltip/> */}
-
-      <CircleBar />
-      <CircleBarColor/>
+      {/* <CircleBar /> */}
+      <CircleBarSize />
+      {/* 
+      <CircleBarColor/> */}
       {/* <RadialDendrogram/>
        <Dendrogram/> */}
         {/* <LineChartInlineLabels/> */}

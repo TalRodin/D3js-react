@@ -26,21 +26,17 @@ const Tool =styled.div`
     }
 `
 export default ({data, scales}) => {
-    const { xScale, yScale } = scales
-    const styles = {
-      left: '100px', //`${xScale(data.value)-10}px`,
-      top: '100px'//`${yScale(data.name)-17}px`,
-
-    }
-
+    // const { xScale, yScale } = scales
+    // const styles = {
+    //   left: `${xScale(data.value)}px`,
+    //   top: `${yScale(data.name)}px`,
+    // }
+    console.log(data)
     return (
-     
-        <Tool styles={styles}>
-          {data.name}<br/>
-          {data.value}
-        </Tool>
-        
-        
-
+        <div >
+          {<h1>hello</h1>}
+          {/* {data.name}<br/>
+          {data.value} */}
+        </div>
     )
   }
