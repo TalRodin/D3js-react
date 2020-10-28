@@ -56,12 +56,14 @@ import BarChartHTitlesMouse from './components/BarChartHTitlesMouse/BarChart'
 import BarChartVTitlesMouse from './components/BarChartVTitlesMouse/BarChart'
 import BarChartVdivergingNoValues from './components/BarChartVdivergingNoValues/BarChart'
 import BarChartVdivergingMouse from './components/BarChartVdivergingMouse/BarChart'
+import BarChartVdivergingTooltip from './components/BarChartVdivergingTooltip/BarChart'
+import CircleBarColor from './components/CircleBarColor/CircleBar'
 
 
 function App() {
   return (
     <div >
-      <BarChartVdivergingMouse/>
+      {/* <BarChartVdivergingMouse/> */}
       {/* <BarChartHTitlesMouse/> */}
       {/* <BarChartVTitles />  */}
       {/* <BarChartVTitlesMouse/> */}
@@ -69,14 +71,10 @@ function App() {
       {/* <BarChartVdiverging /> */}
       {/* <BarChartVdivergingNoValues/> */}
       {/* <BarChartHdiverging /> */}
+      {/* <BarChartVdivergingTooltip/> */}
 
-
-
-
-
-
-      {/* <CircleBar /> */}
-
+      <CircleBar />
+      <CircleBarColor/>
       {/* <RadialDendrogram/>
        <Dendrogram/> */}
         {/* <LineChartInlineLabels/> */}
