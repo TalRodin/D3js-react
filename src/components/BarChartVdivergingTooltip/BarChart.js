@@ -3,7 +3,7 @@ import { scaleBand, scaleLinear } from 'd3-scale'
 import Axes from './Axes'
 import data from './data/data'
 import Bars from './Bars'
-import Tooltip from './Tooltip'
+
 
 
 function BarChart(){
@@ -30,8 +30,6 @@ function BarChart(){
           <Bars
             scales={{ xScale, yScale }}
             data={data}
-            onMouseEnter={() => setShow(true)} 
-            onMouseLeave={() => setShow(false)}
           />
             <Axes
             scales={{ xScale, yScale }}
@@ -39,12 +37,7 @@ function BarChart(){
             data={data}
           />
         </svg>
-        {show? (
-          <Tooltip
-            data={data}
-            scales={{ xScale, yScale }}
-          />
-        ) : null}
+      
       </div>
     )
   }

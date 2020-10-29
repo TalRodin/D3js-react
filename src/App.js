@@ -73,7 +73,7 @@ function App() {
       {/* <BarChartVdiverging /> */}
       {/* <BarChartVdivergingNoValues/> */}
       {/* <BarChartHdiverging /> */}
-      {/* <BarChartVdivergingTooltip/> */}
+      <BarChartVdivergingTooltip/>
       {/* <CircleBar /> */}
       {/* <CircleBarSize /> */}
       {/* 
@@ -82,7 +82,7 @@ function App() {
        <Dendrogram/> */}
         {/* <LineChartInlineLabels/> */}
         
-<CircleBarTooltip/>
+{/* <CircleBarTooltip/> */}
         
         {/* <CircleBarStack /> */}
         {/* <RidgeChart />

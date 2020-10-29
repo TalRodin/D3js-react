@@ -1,8 +1,25 @@
 import React, {useState} from 'react'
 import {schemeCategory10} from 'd3-scale-chromatic'
 import * as d3 from 'd3';
+import Tooltip from '@material-ui/core/Tooltip';
+import { withStyles, makeStyles } from '@material-ui/core/styles';
 
-
+const LightTooltip = withStyles((theme) => ({
+  tooltip: {
+    backgroundColor: "#1e2934",
+    color: '#eee',
+    boxShadow: theme.shadows[4],
+    fontSize: 11,
+    border: '1px solid #1e2934',
+    maxWidth: 120,
+    
+  },
+  arrow: {
+    color: "#1e2934",
+    
+  }
+  ,
+}))(Tooltip);
 
 function Bars({scales,data}){
       const { xScale, yScale } = scales
@@ -11,7 +28,11 @@ function Bars({scales,data}){
       const bars = (
         data.map(datum =>
           <g >
-     
+     <LightTooltip
+    title={d3.format("+,.0%")(datum.value)}
+    placement={datum.value > 0 ? "right" : "left"}
+    arrow
+  >
             <rect
               className='content'
               key={datum.name}
@@ -23,7 +44,7 @@ function Bars({scales,data}){
            
             >
             </rect>
-            
+            </LightTooltip>
           </g>
         )
       )
