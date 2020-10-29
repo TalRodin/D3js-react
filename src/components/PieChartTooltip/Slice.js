@@ -30,6 +30,7 @@ class Slice extends React.Component {
   render() {
   
     let {
+      index,
       value,
       label,
       fill,
@@ -49,13 +50,13 @@ class Slice extends React.Component {
       .cornerRadius(cornerRadius)
       .padAngle(padAngle);
 
-    console.log(value)
+
     return (
 
       <g {...props}>
          <LightTooltip
     title={value.value}
-    placement="right"
+    placement={index<5 ? "right" : "left"}
     arrow
    
   >

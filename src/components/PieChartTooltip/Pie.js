@@ -21,6 +21,7 @@ class Pie extends React.Component {
         let {innerRadius, outerRadius, cornerRadius, padAngle} = this.props;
         return (
           <Slice key={i}
+            index={i}
             innerRadius={innerRadius}
             outerRadius={outerRadius}
             cornerRadius={cornerRadius}
