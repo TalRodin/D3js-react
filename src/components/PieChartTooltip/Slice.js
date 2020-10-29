@@ -1,5 +1,26 @@
 import React, { Component } from 'react';
 import * as d3 from 'd3';
+import Tooltip from '@material-ui/core/Tooltip';
+import { withStyles, makeStyles } from '@material-ui/core/styles';
+
+const LightTooltip = withStyles((theme) => ({
+  tooltip: {
+    backgroundColor: "#1e2934",
+    color: '#eee',
+    boxShadow: theme.shadows[4],
+    fontSize: 11,
+    border: '1px solid #1e2934',
+    maxWidth: 120,
+    
+  },
+  arrow: {
+    color: "#1e2934",
+    
+  }
+  ,
+}))(Tooltip);
+
+
 class Slice extends React.Component {
   constructor(props) {
     super(props);
@@ -27,12 +48,21 @@ class Slice extends React.Component {
       .outerRadius(outerRadius)
       .cornerRadius(cornerRadius)
       .padAngle(padAngle);
+
+    console.log(value)
     return (
-      // 
+
       <g {...props}>
+         <LightTooltip
+    title={value.value}
+    placement="right"
+    arrow
+   
+  >
         <path d={arc(this.props.value)} fill={fill} 
-       
+     
         />
+         </LightTooltip>
         <text
           transform={`translate(${arc.centroid(this.props.value)})`}
           dy=".35em"
@@ -42,7 +72,7 @@ class Slice extends React.Component {
         >
           {this.props.label}
         </text>
-       
+    
       </g>
     );
   }

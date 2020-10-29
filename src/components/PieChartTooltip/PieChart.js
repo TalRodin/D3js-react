@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Pie from './Pie';
 import data from './data/data'
-import Tooltip from './Tooltip';
+
 import *  as d3 from 'd3';
 class ChartLine extends Component {
   constructor() {
@@ -29,18 +29,11 @@ class ChartLine extends Component {
                 cornerRadius={3}
                 padAngle={.005}
                 data={data} 
-                onMouseOverCallback={(data) => this.setState({ hoveredBar: data})}
-                onMouseOutCallback={() => this.setState({ hoveredBar: null })}
+               
                 />
        
             </svg>
-            {this.state.hoveredBar ? (
-          <Tooltip
-            data={this.state.hoveredBar}
-            // left={this.state.left}
-            // top={this.state.top}
-          />
-        ) : null}
+         
           </div> 
         );
       }

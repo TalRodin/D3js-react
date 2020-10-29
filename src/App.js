@@ -73,7 +73,7 @@ function App() {
       {/* <BarChartVdiverging /> */}
       {/* <BarChartVdivergingNoValues/> */}
       {/* <BarChartHdiverging /> */}
-      <BarChartVdivergingTooltip/>
+      {/* <BarChartVdivergingTooltip/> */}
       {/* <CircleBar /> */}
       {/* <CircleBarSize /> */}
       {/* 
@@ -99,7 +99,7 @@ function App() {
         {/* <LollipopV/> */}
         {/* <Lollipop/> */}
         {/* <LineChartConfidenceint/> */}
-        {/* <PieChartTooltip/> */}
+        <PieChartTooltip/>
         {/* <PieChartLabels/> */}
         {/* <HeatmapChart/> */}
         {/* <GroupedBarChart /> */}
