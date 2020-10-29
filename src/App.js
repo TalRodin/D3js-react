@@ -60,11 +60,13 @@ import BarChartVdivergingTooltip from './components/BarChartVdivergingTooltip/Ba
 import CircleBarColor from './components/CircleBarColor/CircleBar'
 import CircleBarSize from './components/CircleBarSize/CircleBar'
 import CircleBarTooltip from './components/CircleBarTooltip/CircleBar'
+import HeatmapChartTooltip from './components/HeatMapTooltip/HeatmapChart'
 
 
 function App() {
   return (
     <div >
+      <HeatmapChartTooltip/>
       {/* <BarChartVdivergingMouse/> */}
       {/* <BarChartHTitlesMouse/> */}
       {/* <BarChartVTitles />  */}
@@ -99,7 +101,7 @@ function App() {
         {/* <LollipopV/> */}
         {/* <Lollipop/> */}
         {/* <LineChartConfidenceint/> */}
-        <PieChartTooltip/>
+        {/* <PieChartTooltip/> */}
         {/* <PieChartLabels/> */}
         {/* <HeatmapChart/> */}
         {/* <GroupedBarChart /> */}
