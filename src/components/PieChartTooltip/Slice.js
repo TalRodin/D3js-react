@@ -1,82 +1,47 @@
-import React, { Component } from 'react';
+import React from 'react';
 import * as d3 from 'd3';
 import Tooltip from '@material-ui/core/Tooltip';
-import { withStyles, makeStyles } from '@material-ui/core/styles';
+import { withStyles} from '@material-ui/core/styles';
 
 const LightTooltip = withStyles((theme) => ({
   tooltip: {
     backgroundColor: "#1e2934",
     color: '#eee',
     boxShadow: theme.shadows[4],
-    fontSize: 11,
+    fontSize: 12,
     border: '1px solid #1e2934',
-    maxWidth: 120,
-    
+    maxWidth: 120
   },
   arrow: {
     color: "#1e2934",
-    
-  }
-  ,
+  },
 }))(Tooltip);
 
 
-class Slice extends React.Component {
-  constructor(props) {
-    super(props);
-  
-  }
-
-  render() {
-  
-    let {
-      index,
-      value,
-      label,
-      fill,
-      innerRadius = 0,
-      outerRadius,
-      cornerRadius,
-      padAngle,
-      ...props
-    } = this.props;
-    // if (this.state.isHovered) {
-    //   outerRadius *= 1.05;
-    // }
-    let arc = d3
-      .arc()
-      .innerRadius(innerRadius)
-      .outerRadius(outerRadius)
-      .cornerRadius(cornerRadius)
-      .padAngle(padAngle);
-
-
+function Slice({value,index, label, fill, innerRadius = 0, outerRadius, cornerRadius, padAngle,}){
+  let arc = d3
+    .arc()
+    .innerRadius(innerRadius)
+    .outerRadius(outerRadius)
+    .cornerRadius(cornerRadius)
+    .padAngle(padAngle);
     return (
-
-      <g {...props}>
+      <g>
          <LightTooltip
-    title={value.value}
-    placement={index<5 ? "right" : "left"}
-    arrow
-   
-  >
-        <path d={arc(this.props.value)} fill={fill} 
-     
-        />
+            title={value.value}
+            placement={index<5 ? "right" : "left"}
+            arrow>
+            <path d={arc(value)} fill={fill} />
          </LightTooltip>
         <text
-          transform={`translate(${arc.centroid(this.props.value)})`}
+          transform={`translate(${arc.centroid(value)})`}
           dy=".35em"
           textAnchor="middle"
           fill="black"
-          font-size="10px"
-        >
-          {this.props.label}
+          fontSize="12px">
+          {label}
         </text>
-    
       </g>
     );
   }
-}
-
 export default Slice;

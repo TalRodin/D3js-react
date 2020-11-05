@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Pie from './Pie';
 import data from './data/data'
 
-class ChartLine extends Component {
-    render() {
+function ChartLine(){
         let width = 500;
         let height = Math.min(width, 500);
         let radius = Math.min(width, height)/2 ;
@@ -11,11 +10,11 @@ class ChartLine extends Component {
         let y = height/2;
         return (
           <div>
-            <svg width='500' height='500' viewBox="0 -100 500 900" >
+            <svg  viewBox="-400 -50 1400 600" >
               <Pie x={x} y={y} 
                 radius={radius} 
-                innerRadius={0}
-                outerRadius={Math.min(width, height) / 2 - 1}
+                innerRadius={3}
+                outerRadius={Math.min(width, height) / 2}
                 cornerRadius={3}
                 padAngle={.005}
                 data={data} />
@@ -23,5 +22,4 @@ class ChartLine extends Component {
           </div> 
         );
       }
-}
 export default ChartLine;

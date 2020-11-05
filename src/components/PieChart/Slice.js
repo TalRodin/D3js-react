@@ -1,37 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import * as d3 from 'd3';
-class Slice extends React.Component {
-  constructor(props) {
-    super(props);
-    // this.state = { isHovered: false };
-    // this.onMouseOver = this.onMouseOver.bind(this);
-    // this.onMouseOut = this.onMouseOut.bind(this);
-  }
 
-  // onMouseOver() {
-  //   this.setState({ isHovered: true });
-  // }
 
-  // onMouseOut() {
-  //   this.setState({ isHovered: false });
-  // }
-  render() {
-    // const tooltipStyle = {
-    //   display: this.state.isHovered ? 'block' : 'none'
-    // }
-    let {
-      value,
-      label,
-      fill,
-      innerRadius = 0,
-      outerRadius,
-      cornerRadius,
-      padAngle,
-      ...props
-    } = this.props;
-    // if (this.state.isHovered) {
-    //   outerRadius *= 1.05;
-    // }
+function Slice({value, label, fill, innerRadius = 0, outerRadius, cornerRadius, padAngle,}){
+    
     let arc = d3
       .arc()
       .innerRadius(innerRadius)
@@ -39,22 +11,18 @@ class Slice extends React.Component {
       .cornerRadius(cornerRadius)
       .padAngle(padAngle);
     return (
-      // onMouseOver={this.onMouseOver} onMouseOut={this.onMouseOut}
-      <g  {...props}>
-        <path d={arc(this.props.value)} fill={fill} />
+      <g>
+        <path d={arc(value)} fill={fill} />
         <text
-          transform={`translate(${arc.centroid(this.props.value)})`}
+          transform={`translate(${arc.centroid(value)})`}
           dy=".35em"
           textAnchor="middle"
-          fill="black"
-          font-size="10px"
-        >
-          {this.props.label}
+          fill="#414141"
+          fontSize="14px">
+          {label}
         </text>
-       
       </g>
     );
   }
-}
 
 export default Slice;
