@@ -62,6 +62,8 @@ import CircleBarSize from './components/CircleBarSize/CircleBar'
 import CircleBarTooltip from './components/CircleBarTooltip/CircleBar'
 import HeatmapChartTooltip from './components/HeatMapTooltip/HeatmapChart'
 import PieChartIncrSlice from './components/PieChartIncrSlice/PieChart'
+import PieChartMadeTooltip from './components/PieChartMadeTooltip/PieChart'
+
 
 function App() {
   return (
@@ -71,7 +73,7 @@ function App() {
       <PieChartLabels/>
       <PieChartWhole />
       <PieChartIncrSlice/>
-
+      <PieChartMadeTooltip />
 
       {/* <HeatmapChartTooltip/> */}
       {/* <BarChartVdivergingMouse/> */}
