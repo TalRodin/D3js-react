@@ -32,12 +32,11 @@ const renderSlice=(value, i)=>{
     <>
     <g>
       {data.map((value,i)=>
-        // console.log(value.name)
       <>
       <circle 
       transform={`translate(${x}, ${y})`}
       key={i}
-      cx={-15}
+      cx={x+50}
       cy={95-i*20}
       r={6}
       fill={colorScale[i]}
@@ -45,7 +44,7 @@ const renderSlice=(value, i)=>{
       <text
       transform={`translate(${x}, ${y})`}
       key={i}
-      x={5}
+      x={x+70}
       y={100-i*20}
       textAnchor="left"
       fill="#414141"
