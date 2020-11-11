@@ -1,33 +1,25 @@
-import React, { Component } from 'react'
+import React, { useRef, useEffect } from 'react'
 import * as d3Axis from 'd3-axis'
 import { select as d3Select } from 'd3-selection'
 
-export default class AxisBubble extends Component {
-    componentDidMount() {
-      this.renderAxis()
+function Axis({orient,scale,translate}){
+    let axisElement = useRef(null);
+    useEffect(() => {
+      renderAxis()
+    }, [])
+    const renderAxis=() =>{
+      const axisType = `axis${orient}`
+      const axisl = d3Axis[axisType]()
+        .scale(scale)
+        .tickPadding([4])
+      d3Select(axisElement).call(axisl)
     }
-  
-    componentDidUpdate() {
-      this.renderAxis()
-    }
-  
-    renderAxis() {
-      const axisType = `axis${this.props.orient}`
-      console.log(axisType)
-      const axis = d3Axis.axisLeft()
-        .scale(this.props.scale)
-        .tickSize(this.props.tickSize)
-        .ticks([11])
-      d3Select(this.axisElement).call(axis)
-    }
-  
-    render() {
       return (
         <g
-          className={`Axis Axis-${this.props.orient}`}
-          ref={(el) => { this.axisElement = el; }}
-          transform={this.props.translate}
-        />
+        className={`Axis Axis-${orient}`}
+        ref={(el) => { axisElement = el;}}
+        transform={translate}>  
+       </g>
       )
-    }
   }
+export default Axis

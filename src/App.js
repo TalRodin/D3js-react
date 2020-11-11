@@ -63,85 +63,80 @@ import CircleBarTooltip from './components/CircleBarTooltip/CircleBar'
 import HeatmapChartTooltip from './components/HeatMapTooltip/HeatmapChart'
 import PieChartIncrSlice from './components/PieChartIncrSlice/PieChart'
 import PieChartMadeTooltip from './components/PieChartMadeTooltip/PieChart'
-
+import HeatmapChartTooltipColor from './components/HeatMapTooltipColor/HeatmapChart'
 
 function App() {
   return (
     <div >
-      <PieChart />
+      {/* <BubbleChart /> */}
+      <BubbleBasic />
+      <BubbleBasicColor />
+      {/* <PieChart />
       <PieChartTooltip/>
       <PieChartLabels/>
       <PieChartWhole />
       <PieChartIncrSlice/>
       <PieChartMadeTooltip />
+       */}
+      {/* <HeatmapChartTooltip/>
+      <HeatmapChart/>
+      <HeatmapChartTooltipColor/> */}
+      {/* <BarChartVdivergingMouse/>
+      <BarChartHTitlesMouse/>
+      <BarChartVTitles /> 
+      <BarChartVTitlesMouse/>
+      <BarChartHTitles />
+      <BarChartVdiverging />
+      <BarChartVdivergingNoValues/>
+      <BarChartHdiverging />
+      <BarChartVdivergingTooltip/>
+      <CircleBar />
+      <CircleBarSize />
+      <CircleBarColor/>
+      <CircleBarTitle />
+      <CircleBarDiverging />
+      <BarChartV />
+      <BarChartH />
+      <RidgeChart />
+      <RidgeChartColor/>
+      <RadialDendrogram/>
+      <Dendrogram/>
+      <BasicCounter/>
+      <LineChartInlineLabels/>
+      <CircleBarTooltip/>
+      <Density2d/>
+      <Hexbin/>
+      <ArcDiagramVert/>
+      <ArcDiagram/>
+      <LollipopCleveland/>
+      <LollipopV/>
+      <Lollipop/>
+      <StreamGraph/>
+      <StackedBar />
+      <StackedBarV />
+      <GroupedBarChart />
+      <AreaChart />
+      <AreaLineChart />
+      <AreaStackedChart/>
+      <LineBarChart /> */}
+      {/* <ChordChardTitles/> */}
+      {/* <ChordChard/>
+      <ChordChardColor/> */}
+      {/* <CircleBarStack /> */}
+      {/* <LineChartConfidenceint/>
+      <LineChartM />
+      <LineChartY />
+      <LineChartD />
+      <LineChartDouble />
+      <MissingLineChart/>
+      <MissingAreaChart /> 
+      <StackedBarDiverging /> 
+      <StackedBarDivergingH />
 
-      {/* <HeatmapChartTooltip/> */}
-      {/* <BarChartVdivergingMouse/> */}
-      {/* <BarChartHTitlesMouse/> */}
-      {/* <BarChartVTitles />  */}
-      {/* <BarChartVTitlesMouse/> */}
-      {/* <BarChartHTitles /> */}
-      {/* <BarChartVdiverging /> */}
-      {/* <BarChartVdivergingNoValues/> */}
-      {/* <BarChartHdiverging /> */}
-      {/* <BarChartVdivergingTooltip/> */}
-      {/* <CircleBar /> */}
-      {/* <CircleBarSize /> */}
-      {/* 
-      <CircleBarColor/> */}
-      {/* <RadialDendrogram/>
-       <Dendrogram/> */}
-        {/* <LineChartInlineLabels/> */}
-        
-{/* <CircleBarTooltip/> */}
-        
-        {/* <CircleBarStack /> */}
-        {/* <RidgeChart />
-        <RidgeChartColor/> */}
-     
-        {/* <BarChartH /> */}
-        {/* <BasicCounter/> */}
-        {/* <Density2d/> */}
-        {/* <Hexbin/> */}
-        {/* <ArcDiagramVert/> */}
-        {/* <ArcDiagram/> */}
-        {/* <ChordChardTitles/> */}
-        {/* <LollipopCleveland/> */}
-        {/* <LollipopV/> */}
-        {/* <Lollipop/> */}
-        {/* <LineChartConfidenceint/> */}
-      
-        {/* <HeatmapChart/> */}
-        {/* <GroupedBarChart /> */}
-        {/* <LineBarChart /> */}
-        {/* <BarChartV />
-        <StackedBar />
-        <StackedBarV />
-        <StackedBarDiverging /> 
-        <StackedBarDivergingH /> */}
-        {/* 
-        
-        <LineChartM />
-        <LineChartY />
-        <LineChartD />
-        <BubbleChart />
-        <LineChartDouble />
-        <AreaChart />
-        <LineBarChart />
-        <CircleBarTitle />
-        <CircleBarDiverging />
-          */}
-        {/* <BubbleBasic /> */}
-        {/* <BubbleBasicColor /> */}
-        {/* <MissingLineChart/> */}
-        {/* <MissingAreaChart /> */}
-        {/* <AreaLineChart /> */}
-        {/* <AreaStackedChart/> */}
-        {/* <ScatterPlotBasic/> */}
-        {/* <ScatterPlotMultipleSeries/> */}
-        {/* <ChordChard/> */}
-        {/* <ChordChardColor/> */}
-        {/* <StreamGraph/> */}
+      <ScatterPlotBasic/>
+      <ScatterPlotMultipleSeries/>
+       */}
+  
     </div>
   );
 }

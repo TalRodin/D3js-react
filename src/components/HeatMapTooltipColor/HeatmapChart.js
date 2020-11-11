@@ -14,11 +14,11 @@ function Heat(){
         const myVars = ["v1", "v2", "v3", "v4", "v5", "v6", "v7", "v8", "v9", "v10"]
 
         const xScale = scaleBand()
-                .padding(0.01)
+                .padding(0.05)
                 .domain(myGroups)
                 .range([0,svgDimensions.width])
         const yScale = scaleBand()
-                .padding(0.01)
+                .padding(0.05)
                 .domain(myVars)
                 .range([svgDimensions.height,0])
         return (

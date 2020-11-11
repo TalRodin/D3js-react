@@ -1,7 +1,8 @@
 import React from 'react';
-import { scaleLinear } from 'd3-scale';
+import { scaleSequential } from 'd3-scale';
 import Tooltip from '@material-ui/core/Tooltip';
 import { withStyles} from '@material-ui/core/styles';
+import * as d3 from 'd3';
 
 const LightTooltip = withStyles((theme) => ({
   tooltip: {
@@ -19,8 +20,8 @@ const LightTooltip = withStyles((theme) => ({
 }))(Tooltip);
 
 function Heatmap({scales, data}){
-    const  colorScale = scaleLinear()
-    .range(["#eee", "#5371f9"])
+    const  colorScale = scaleSequential()
+    .interpolator(d3.interpolateBuPu)
     .domain([1,100])
     const { xScale, yScale } = scales
     const bars = (

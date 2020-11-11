@@ -1,37 +1,21 @@
-import React, { Component } from 'react'
-import { scaleLinear } from 'd3-scale'
-import { interpolateLab } from 'd3-interpolate'
-import * as d3 from "d3"
+import React from 'react'
 
-export default class Bubble extends Component {
-    constructor(props) {
-      super(props)
-      this.colorScale = scaleLinear()
-        .domain([this.props.minValue, this.props.maxValue])
-        .range(['#d971bb', '#5142f5'])
-        .interpolate(interpolateLab)
-  }
-    render() {
-      const { scales, margins, data, svgDimensions, ...props } = this.props
-      const { xScale, yScale, zScale} = scales
-      const { height } = svgDimensions
-      const bubble = (
+function Bubble({ scales, margins, data}){
+          const { xScale, yScale, zScale} = scales
+          const bubble = (
           data.map(datum =>
-         
             <circle
-            
             cx={xScale(datum.gdpPercap)}  
             cy={yScale(datum.lifeExp)}
             r={zScale(datum.pop)}
-            fill="#69b3a2"
+            fill="#5371f9"
             opacity="0.7"
             stroke="black"
-          />
+            strokeWidth='0.5'/>
          )
-        )
-      return (
-        
-        <g transform={`translate(${margins.left}, ${margins.top})`}>{bubble}</g>
       )
-    }
-  }
+      return (
+        <g transform={`translate(${margins.left}, ${margins.top})`}>{bubble}</g>
+              )
+}
+export default Bubble
