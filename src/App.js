@@ -64,12 +64,14 @@ import HeatmapChartTooltip from './components/HeatMapTooltip/HeatmapChart'
 import PieChartIncrSlice from './components/PieChartIncrSlice/PieChart'
 import PieChartMadeTooltip from './components/PieChartMadeTooltip/PieChart'
 import HeatmapChartTooltipColor from './components/HeatMapTooltipColor/HeatmapChart'
+import BubbleBasicTooltip from './components/BubbleBasicTooltip/BubbleChart'
 
 function App() {
   return (
     <div >
       {/* <BubbleChart /> */}
       <BubbleBasic />
+      <BubbleBasicTooltip />
       <BubbleBasicColor />
       {/* <PieChart />
       <PieChartTooltip/>
