@@ -7,6 +7,7 @@ export default ({ scales, svgDimensions }) => {
       orient: 'Bottom',
       scale: scales.xScale,
       translate: `translate(0, ${height})`,
+      text:"transform(rotate(90))"
     }
     const yProps = {
       orient: 'Left',

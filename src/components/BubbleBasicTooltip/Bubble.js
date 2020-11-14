@@ -28,7 +28,6 @@ function Bubble({ scales, margins, data}){
                    `Population: ${datum.pop} `+
                     `Life Expect.: ${datum.lifeExp} `+
                    `GDP Per Cap.: ${datum.gdpPercap} `}
-
             placement={"right-end"}
             arrow>
             <circle
@@ -40,7 +39,6 @@ function Bubble({ scales, margins, data}){
             stroke="black"
             strokeWidth='0.5'/>
             </LightTooltip>  
-
          )
       )
       return (
