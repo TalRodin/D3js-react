@@ -65,27 +65,28 @@ import PieChartIncrSlice from './components/PieChartIncrSlice/PieChart'
 import PieChartMadeTooltip from './components/PieChartMadeTooltip/PieChart'
 import HeatmapChartTooltipColor from './components/HeatMapTooltipColor/HeatmapChart'
 import BubbleBasicTooltip from './components/BubbleBasicTooltip/BubbleChart'
-import ScatterPlot from './components/ScatterPlot/BubbleChart'
+// import ScatterPlot from './components/ScatterPlot/BubbleChart'
 
 
 function App() {
   return (
     <div >
-      <ScatterPlot/>
+      {/* <ScatterPlot/> */}
       {/* <BubbleChart /> */}
       {/* <BubbleBasic />
-      <BubbleBasicTooltip />
-      <BubbleBasicColor /> */}
+      <BubbleBasicTooltip /> */}
+      {/* <BubbleBasicColor /> */}
       {/* <PieChart />
       <PieChartTooltip/>
       <PieChartLabels/>
       <PieChartWhole />
       <PieChartIncrSlice/>
-      <PieChartMadeTooltip />
-       */}
+      <PieChartMadeTooltip /> */}
+      
       {/* <HeatmapChartTooltip/>
       <HeatmapChart/>
       <HeatmapChartTooltipColor/> */}
+
       {/* <BarChartVdivergingMouse/>
       <BarChartHTitlesMouse/>
       <BarChartVTitles /> 
@@ -124,11 +125,12 @@ function App() {
       <AreaLineChart />
       <AreaStackedChart/>
       <LineBarChart /> */}
-      {/* <ChordChardTitles/> */}
-      {/* <ChordChard/>
-      <ChordChardColor/> */}
-      {/* <CircleBarStack /> */}
-      {/* <LineChartConfidenceint/>
+
+      {/* <ChordChardTitles/>
+      <ChordChard/>
+      <ChordChardColor/>
+      <CircleBarStack /> */}
+      <LineChartConfidenceint/>
       <LineChartM />
       <LineChartY />
       <LineChartD />
@@ -140,7 +142,7 @@ function App() {
 
       <ScatterPlotBasic/>
       <ScatterPlotMultipleSeries/>
-       */}
+      
   
     </div>
   );
