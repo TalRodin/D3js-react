@@ -7,7 +7,7 @@ This project has been created to quickly and effortlessly build beautiful D3js p
 
 
 # Examples:
-![PieChartTitles](/public/Heatmap.png?raw=true)
+![Pie Chart Titles](/public/PieChartTitles.png?raw=true)
 ![Heatmap](/public/Heatmap.png?raw=true)
 ![Ridge Chart](/public/RidgeChart.png?raw=true)
 ![Chord Chart](/public/ChordChart.png?raw=true)
